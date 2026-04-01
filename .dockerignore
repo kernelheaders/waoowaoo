@@ -44,10 +44,10 @@ prisma/data
 .env.*.local
 .env.test
 
-# 文档和杂项
-*.md
+# Documentation and misc
 *.py
 debug-request.json
 AGENTS.md
 docs
 agent
+_archive
