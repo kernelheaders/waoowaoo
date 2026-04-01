@@ -239,6 +239,17 @@ export class KieImageGenerator extends BaseImageGenerator {
 // KIE 视频生成器
 // ============================================================
 
+// Model-specific image field mapping
+// Different KIE video models use different field names for input images
+const KIE_VIDEO_IMAGE_FIELD: Record<string, string> = {
+    'hailuo/2-3-image-to-video-pro': 'image_url',      // singular, string
+    'hailuo/2-3-image-to-video-standard': 'image_url',
+    'hailuo/02-image-to-video-pro': 'image_url',
+    'hailuo/02-image-to-video-standard': 'image_url',
+    'bytedance/seedance-1.5-pro': 'input_urls',         // array
+}
+// Default: 'image_urls' (array) — used by kling, wan, grok-imagine, etc.
+
 export class KieVideoGenerator extends BaseVideoGenerator {
     protected async doGenerate(params: VideoGenerateParams): Promise<GenerateResult> {
         const { userId, imageUrl, prompt = '', options = {} } = params
@@ -246,9 +257,11 @@ export class KieVideoGenerator extends BaseVideoGenerator {
         const { apiKey } = await getProviderConfig(userId, 'kie')
         const {
             duration,
+            aspectRatio,
             modelId = 'kling-2.6/image-to-video',
         } = options as {
             duration?: number
+            aspectRatio?: string
             modelId?: string
             provider?: string
             modelKey?: string
@@ -265,13 +278,25 @@ export class KieVideoGenerator extends BaseVideoGenerator {
 
         const input: Record<string, unknown> = {}
         if (prompt) input.prompt = prompt
+
+        // Resolve image (base64 → URL) and use correct field name per model
         if (imageUrl) {
             const resolvedUrls = await resolveImageUrls(apiKey, [imageUrl])
             if (resolvedUrls.length > 0) {
-                input.image_urls = resolvedUrls
+                const imageField = KIE_VIDEO_IMAGE_FIELD[modelId] || 'image_urls'
+                if (imageField === 'image_url') {
+                    // Singular string field (hailuo models)
+                    input.image_url = resolvedUrls[0]
+                } else {
+                    // Array field (kling, wan, grok, bytedance, etc.)
+                    input[imageField] = resolvedUrls
+                }
             }
         }
-        if (typeof duration === 'number') input.duration = duration
+
+        // Duration as string (KIE API expects string)
+        if (typeof duration === 'number') input.duration = String(duration)
+        if (aspectRatio) input.aspect_ratio = aspectRatio
 
         const { taskId } = await submitKieTask(apiKey, modelId, input)
 

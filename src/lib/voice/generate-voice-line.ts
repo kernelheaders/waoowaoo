@@ -25,7 +25,7 @@ function normalizeBailianVoiceGenerationError(errorMessage: string | null | unde
     normalized.includes('bailian_tts_failed(400): invalidparameter') ||
     normalized.includes('invalidparameter')
   ) {
-    return '无效音色ID，QwenTTS 必须使用 AI 设计音色'
+    return 'Invalid voice ID. QwenTTS requires an AI-designed voice'
   }
 
   return message
@@ -138,7 +138,7 @@ async function resolveReferenceAudioUrl(referenceAudioUrl: string): Promise<stri
   if (referenceAudioUrl.startsWith('/m/')) {
     const storageKey = await resolveStorageKeyFromMediaValue(referenceAudioUrl)
     if (!storageKey) {
-      throw new Error(`无法解析参考音频路径: ${referenceAudioUrl}`)
+      throw new Error(`Cannot parse reference audio path: ${referenceAudioUrl}`)
     }
     return getSignedUrl(storageKey, 3600)
   }
@@ -222,7 +222,7 @@ export async function generateVoiceLine(params: {
   let generated: { audioData: Buffer; audioDuration: number }
   if (providerKey === 'fal') {
     if (!voiceBinding || voiceBinding.provider !== 'fal') {
-      throw new Error('请先为该发言人设置参考音频')
+      throw new Error('Please set a reference audio for this speaker first')
     }
 
     const fullAudioUrl = await resolveReferenceAudioUrl(voiceBinding.referenceAudioUrl)
@@ -243,7 +243,7 @@ export async function generateVoiceLine(params: {
       if (hasUploadedReference) {
         throw new Error('无音色ID，QwenTTS 必须使用 AI 设计音色')
       }
-      throw new Error('请先为该发言人绑定百炼音色')
+      throw new Error('Please bind a Bailian voice to this speaker first')
     }
     const { apiKey } = await getProviderConfig(params.userId, audioSelection.provider)
     const result = await synthesizeWithBailianTTS({
