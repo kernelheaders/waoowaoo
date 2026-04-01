@@ -226,12 +226,16 @@ export async function chatCompletionWithVision(
       }
 
       const config = providerConfig
-      if (!config.baseUrl) {
+      // KIE provider: dynamically build base URL with model-specific path
+      const effectiveBaseUrl = providerKey === 'kie'
+        ? `https://api.kie.ai/${resolvedModelId}/v1`
+        : config.baseUrl
+      if (!effectiveBaseUrl) {
         throw new Error(`PROVIDER_BASE_URL_MISSING: ${provider} (llm)`)
       }
 
       const client = new OpenAI({
-        baseURL: config.baseUrl,
+        baseURL: effectiveBaseUrl,
         apiKey: config.apiKey,
       })
 

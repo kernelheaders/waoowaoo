@@ -29,6 +29,7 @@ import {
     SiliconFlowImageGenerator,
     SiliconFlowVideoGenerator,
 } from './official'
+import { KieImageGenerator, KieVideoGenerator } from './kie'
 
 /**
  * 根据 provider 创建图片生成器
@@ -67,6 +68,8 @@ export function createImageGenerator(provider: string, modelId?: string): ImageG
             return new BailianImageGenerator()
         case 'siliconflow':
             return new SiliconFlowImageGenerator()
+        case 'kie':
+            return new KieImageGenerator(actualModelId)
         default:
             throw new Error(`Unknown image generator provider: ${provider}`)
     }
@@ -96,6 +99,8 @@ export function createVideoGenerator(provider: string): VideoGenerator {
             return new BailianVideoGenerator()
         case 'siliconflow':
             return new SiliconFlowVideoGenerator()
+        case 'kie':
+            return new KieVideoGenerator()
         default:
             throw new Error(`Unknown video generator provider: ${provider}`)
     }

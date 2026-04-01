@@ -434,16 +434,20 @@ export async function chatCompletionStream(
     }
 
     if (providerKey !== 'ark') {
-      if (!providerConfig.baseUrl) {
+      // KIE provider: dynamically build base URL with model-specific path
+      const effectiveBaseUrl = providerKey === 'kie'
+        ? `https://api.kie.ai/${resolvedModelId}/v1`
+        : providerConfig.baseUrl
+      if (!effectiveBaseUrl) {
         throw new Error(`PROVIDER_BASE_URL_MISSING: ${provider} (llm)`)
       }
 
-      const isOpenRouter = !!providerConfig.baseUrl?.includes('openrouter')
+      const isOpenRouter = !!effectiveBaseUrl?.includes('openrouter')
       const providerName = isOpenRouter ? 'openrouter' : provider
       const shouldUseAiSdk = !isOpenRouter
       if (shouldUseAiSdk) {
         const aiOpenAI = createOpenAI({
-          baseURL: providerConfig.baseUrl,
+          baseURL: effectiveBaseUrl,
           apiKey: providerConfig.apiKey,
           name: providerName,
         })
@@ -743,7 +747,7 @@ export async function chatCompletionStream(
       }
 
       const client = new OpenAI({
-        baseURL: providerConfig.baseUrl,
+        baseURL: effectiveBaseUrl,
         apiKey: providerConfig.apiKey,
       })
 

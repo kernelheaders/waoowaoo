@@ -90,6 +90,34 @@ type PresetModel = Omit<CustomModel, 'enabled' | 'modelKey' | 'price'>
 
 // 预设模型
 export const PRESET_MODELS: PresetModel[] = [
+    // ==================== KIE.ai 模型 ====================
+    // KIE LLM 文本模型
+    { modelId: 'gemini-3.1-pro', name: 'Gemini 3.1 Pro', type: 'llm', provider: 'kie' },
+    { modelId: 'gemini-3-pro', name: 'Gemini 3 Pro', type: 'llm', provider: 'kie' },
+    { modelId: 'gemini-3-flash', name: 'Gemini 3 Flash', type: 'llm', provider: 'kie' },
+    { modelId: 'gemini-2.5-pro', name: 'Gemini 2.5 Pro', type: 'llm', provider: 'kie' },
+    { modelId: 'gemini-2.5-flash', name: 'Gemini 2.5 Flash', type: 'llm', provider: 'kie' },
+    // KIE 图像模型
+    { modelId: 'nano-banana-2', name: 'Nano Banana 2', type: 'image', provider: 'kie' },
+    { modelId: 'nano-banana-pro', name: 'Nano Banana Pro', type: 'image', provider: 'kie' },
+    { modelId: 'nano-banana', name: 'Nano Banana', type: 'image', provider: 'kie' },
+    { modelId: 'nano-banana-edit', name: 'Nano Banana Edit', type: 'image', provider: 'kie' },
+    { modelId: 'imagen4', name: 'Imagen 4', type: 'image', provider: 'kie' },
+    { modelId: 'imagen4-fast', name: 'Imagen 4 Fast', type: 'image', provider: 'kie' },
+    { modelId: 'imagen4-ultra', name: 'Imagen 4 Ultra', type: 'image', provider: 'kie' },
+    // KIE 视频模型
+    { modelId: 'kling-2.6/image-to-video', name: 'Kling 2.6 I2V', type: 'video', provider: 'kie' },
+    { modelId: 'kling-2.6/text-to-video', name: 'Kling 2.6 T2V', type: 'video', provider: 'kie' },
+    { modelId: 'kling-3.0', name: 'Kling 3.0', type: 'video', provider: 'kie' },
+    { modelId: 'wan-2.6/image-to-video', name: 'Wan 2.6 I2V', type: 'video', provider: 'kie' },
+    { modelId: 'wan-2.6/text-to-video', name: 'Wan 2.6 T2V', type: 'video', provider: 'kie' },
+    { modelId: 'hailuo-2.3/image-to-video-pro', name: 'Hailuo 2.3 Pro I2V', type: 'video', provider: 'kie' },
+    { modelId: 'bytedance/seedance-1-5-pro', name: 'Seedance 1.5 Pro', type: 'video', provider: 'kie' },
+    // KIE 音频模型 (ElevenLabs TTS)
+    { modelId: 'elevenlabs/text-to-speech-turbo-2-5', name: 'ElevenLabs TTS Turbo', type: 'audio', provider: 'kie' },
+    { modelId: 'elevenlabs/text-to-speech-multilingual-v2', name: 'ElevenLabs TTS Multilingual', type: 'audio', provider: 'kie' },
+
+    // ==================== 原有模型 ====================
     // 文本模型
     { modelId: 'google/gemini-3.1-pro-preview', name: 'Gemini 3.1 Pro', type: 'llm', provider: 'openrouter' },
     { modelId: 'google/gemini-3-pro-preview', name: 'Gemini 3 Pro', type: 'llm', provider: 'openrouter' },
@@ -198,6 +226,7 @@ export function isPresetComingSoonModelKey(modelKey: string): boolean {
 
 // 预设提供商（API Key 唯一归属于 provider id）
 export const PRESET_PROVIDERS: Omit<Provider, 'apiKey' | 'hasApiKey'>[] = [
+    { id: 'kie', name: 'KIE.ai', baseUrl: 'https://api.kie.ai' },
     { id: 'ark', name: 'Volcengine Ark' },
     { id: 'google', name: 'Google AI Studio' },
     { id: 'bailian', name: 'Alibaba Bailian' },
@@ -298,6 +327,15 @@ export interface ProviderTutorial {
 // 厂商开通教程配置
 // 注意: text 字段使用 i18n key, 翻译在 apiConfig.tutorials 下
 export const PROVIDER_TUTORIALS: ProviderTutorial[] = [
+    {
+        providerId: 'kie',
+        steps: [
+            {
+                text: 'kie_step1',
+                url: 'https://kie.ai/api-key'
+            }
+        ]
+    },
     {
         providerId: 'ark',
         steps: [

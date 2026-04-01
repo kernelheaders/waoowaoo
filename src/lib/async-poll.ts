@@ -47,7 +47,7 @@ function getErrorMessage(error: unknown): string {
  * 解析 externalId 获取 provider、type 和请求信息
  */
 export function parseExternalId(externalId: string): {
-    provider: 'FAL' | 'ARK' | 'GEMINI' | 'GOOGLE' | 'MINIMAX' | 'VIDU' | 'OPENAI' | 'OCOMPAT' | 'BAILIAN' | 'SILICONFLOW' | 'UNKNOWN'
+    provider: 'FAL' | 'ARK' | 'GEMINI' | 'GOOGLE' | 'MINIMAX' | 'VIDU' | 'OPENAI' | 'OCOMPAT' | 'BAILIAN' | 'SILICONFLOW' | 'KIE' | 'UNKNOWN'
     type: 'VIDEO' | 'IMAGE' | 'BATCH' | 'UNKNOWN'
     endpoint?: string
     requestId: string
@@ -209,9 +209,23 @@ export function parseExternalId(externalId: string): {
         }
     }
 
+    if (externalId.startsWith('KIE:')) {
+        const parts = externalId.split(':')
+        const type = parts[1]
+        const requestId = parts.slice(2).join(':')
+        if ((type !== 'VIDEO' && type !== 'IMAGE') || !requestId) {
+            throw new Error(`无效 KIE externalId: "${externalId}"，应为 KIE:TYPE:taskId`)
+        }
+        return {
+            provider: 'KIE',
+            type: type as 'VIDEO' | 'IMAGE',
+            requestId,
+        }
+    }
+
     throw new Error(
         `无法识别的 externalId 格式: "${externalId}". ` +
-        `支持的格式: FAL:TYPE:endpoint:requestId, ARK:TYPE:requestId, GEMINI:BATCH:batchName, GOOGLE:VIDEO:operationName, MINIMAX:TYPE:taskId, VIDU:TYPE:taskId, OPENAI:VIDEO:providerToken:videoId, OCOMPAT:TYPE:providerToken:modelKeyToken:taskId, BAILIAN:TYPE:requestId, SILICONFLOW:TYPE:requestId`
+        `支持的格式: FAL:TYPE:endpoint:requestId, ARK:TYPE:requestId, GEMINI:BATCH:batchName, GOOGLE:VIDEO:operationName, MINIMAX:TYPE:taskId, VIDU:TYPE:taskId, OPENAI:VIDEO:providerToken:videoId, OCOMPAT:TYPE:providerToken:modelKeyToken:taskId, BAILIAN:TYPE:requestId, SILICONFLOW:TYPE:requestId, KIE:TYPE:taskId`
     )
 }
 
@@ -251,6 +265,8 @@ export async function pollAsyncTask(
             return await pollBailianTask(parsed.requestId, userId)
         case 'SILICONFLOW':
             return await pollSiliconFlowTask(parsed.requestId)
+        case 'KIE':
+            return await pollKieTask(parsed.requestId, userId)
         default:
             // 🔥 移除 fallback：未知 provider 直接抛出错误
             throw new Error(`未知的 Provider: ${parsed.provider}`)
@@ -858,6 +874,144 @@ async function pollSiliconFlowTask(requestId: string): Promise<PollResult> {
 }
 
 /**
+ * KIE 任务轮询
+ */
+async function pollKieTask(
+    taskId: string,
+    userId: string,
+): Promise<PollResult> {
+    const logPrefix = '[KIE Query]'
+
+    try {
+        const { apiKey } = await getProviderConfig(userId, 'kie')
+        const response = await fetch(
+            `https://api.kie.ai/api/v1/jobs/recordInfo?taskId=${encodeURIComponent(taskId)}`,
+            {
+                headers: {
+                    'Authorization': `Bearer ${apiKey}`,
+                },
+            },
+        )
+
+        if (!response.ok) {
+            const errorText = await response.text().catch(() => '')
+            _ulogError(`${logPrefix} 查询失败:`, response.status, errorText)
+            return {
+                status: 'failed',
+                error: `KIE: 查询失败 ${response.status}`,
+            }
+        }
+
+        const data = await response.json() as {
+            code?: number
+            msg?: string
+            data?: {
+                taskId?: string
+                state?: string
+                resultJson?: string
+                failCode?: string
+                failMsg?: string
+            }
+        }
+
+        if (data.code !== 200 || !data.data) {
+            return {
+                status: 'failed',
+                error: `KIE: ${data.msg || 'Unknown error'}`,
+            }
+        }
+
+        const state = (data.data.state || '').toLowerCase()
+
+        // pending states: waiting, queuing, generating
+        if (state === 'waiting' || state === 'queuing' || state === 'generating') {
+            return { status: 'pending' }
+        }
+
+        if (state === 'fail') {
+            const errMsg = data.data.failMsg || data.data.failCode || '生成失败'
+            _ulogError(`${logPrefix} task_id=${taskId} 失败: ${errMsg}`)
+            return {
+                status: 'failed',
+                error: `KIE: ${errMsg}`,
+            }
+        }
+
+        if (state === 'success') {
+            // Parse resultJson to extract URLs
+            let resultUrl: string | undefined
+            let videoUrl: string | undefined
+            let imageUrl: string | undefined
+
+            if (data.data.resultJson) {
+                try {
+                    const resultData = JSON.parse(data.data.resultJson) as {
+                        resultUrls?: string[]
+                        resultObject?: {
+                            url?: string
+                            video_url?: string
+                            image_url?: string
+                            images?: Array<{ url?: string }>
+                        }
+                    }
+
+                    // Try resultUrls array first
+                    if (Array.isArray(resultData.resultUrls) && resultData.resultUrls.length > 0) {
+                        resultUrl = resultData.resultUrls[0]
+                    }
+
+                    // Try resultObject
+                    if (!resultUrl && resultData.resultObject) {
+                        resultUrl = resultData.resultObject.url
+                            || resultData.resultObject.video_url
+                            || resultData.resultObject.image_url
+                        if (!resultUrl && Array.isArray(resultData.resultObject.images)) {
+                            resultUrl = resultData.resultObject.images[0]?.url
+                        }
+                    }
+                } catch {
+                    _ulogError(`${logPrefix} task_id=${taskId} resultJson parse failed`)
+                }
+            }
+
+            if (!resultUrl) {
+                return {
+                    status: 'failed',
+                    error: 'KIE: 任务完成但未返回结果URL',
+                }
+            }
+
+            // Determine type from URL pattern
+            const isVideo = /\.(mp4|mov|webm|avi)(\?|$)/i.test(resultUrl)
+            if (isVideo) {
+                videoUrl = resultUrl
+            } else {
+                imageUrl = resultUrl
+            }
+
+            _ulogInfo(`${logPrefix} task_id=${taskId} 完成: ${resultUrl.substring(0, 80)}...`)
+
+            return {
+                status: 'completed',
+                resultUrl,
+                videoUrl,
+                imageUrl,
+            }
+        }
+
+        // Unknown state, treat as pending
+        return { status: 'pending' }
+    } catch (error: unknown) {
+        const errorMessage = getErrorMessage(error)
+        _ulogError(`${logPrefix} task_id=${taskId} 异常:`, error)
+        return {
+            status: 'failed',
+            error: `KIE: ${errorMessage}`,
+        }
+    }
+}
+
+/**
  * 查询 Vidu 任务状态
  */
 async function queryViduTaskStatus(
@@ -948,7 +1102,7 @@ async function queryViduTaskStatus(
  * 创建标准格式的 externalId
  */
 export function formatExternalId(
-    provider: 'FAL' | 'ARK' | 'GEMINI' | 'GOOGLE' | 'MINIMAX' | 'VIDU' | 'OPENAI' | 'OCOMPAT' | 'BAILIAN' | 'SILICONFLOW',
+    provider: 'FAL' | 'ARK' | 'GEMINI' | 'GOOGLE' | 'MINIMAX' | 'VIDU' | 'OPENAI' | 'OCOMPAT' | 'BAILIAN' | 'SILICONFLOW' | 'KIE',
     type: 'VIDEO' | 'IMAGE' | 'BATCH',
     requestId: string,
     endpoint?: string,
