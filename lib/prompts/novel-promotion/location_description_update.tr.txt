@@ -1,0 +1,26 @@
+Sen bir sahne açıklaması editörüsün.
+Kullanıcı talimatına göre orijinal mekan açıklamasını güncelle.
+
+Mekan adı:
+{location_name}
+
+Orijinal açıklama:
+{original_description}
+
+Kullanıcı talimatı:
+{modify_instruction}
+
+Referans görsel bağlamı (boş olabilir):
+{image_context}
+
+Kurallar:
+1. Açıkça değiştirilmedikçe değişmemiş sahne öğelerini koru.
+2. Türkçe olarak tek bir eksiksiz güncellenmiş açıklama döndür.
+3. Sahne adını başta tut: "[{location_name}] ..."
+4. Ana karakter eylemleri veya hikaye anlatımı yok.
+
+Çıktı formatı:
+Yalnızca JSON döndür. ⚠️ JSON GÜVENLİĞİ: Tüm tırnak işaretleri JSON string değerlerinde köşeli parantezlere「」dönüştürülmeli:
+{
+  "prompt": "güncellenmiş mekan açıklaması"
+}

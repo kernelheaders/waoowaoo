@@ -4,7 +4,7 @@ export interface VoiceDesignInput {
   voicePrompt: string
   previewText: string
   preferredName?: string
-  language?: 'zh' | 'en'
+  language?: 'tr' | 'en'
 }
 
 export interface VoiceDesignResult {
@@ -39,7 +39,7 @@ export async function createVoiceDesign(
       voice_prompt: input.voicePrompt,
       preview_text: input.previewText,
       preferred_name: input.preferredName || 'custom_voice',
-      language: input.language || 'zh',
+      language: input.language || 'tr',
     },
     parameters: {
       sample_rate: 24000,

@@ -1,0 +1,31 @@
+# Karakter Görselinden Açıklama Oluşturma Promptu
+
+Verilen karakter görselini analiz et ve görsel üretimi için detaylı bir Türkçe görsel açıklama yaz.
+
+## Gerekli içerik
+Aşağıdakilerin tümünü dahil et:
+1. Cinsiyet ve yaklaşık yaş aralığı
+2. Saç stili ve saç rengi
+3. Yüz şekli ve yüz özellikleri
+4. Vücut yapısı ve siluet
+5. Giyim stili ve kıyafet detayları
+6. Aksesuarlar ve ayırt edici detaylar
+7. Genel stil anahtar kelimeleri
+
+## Eksik parça tamamlama
+Görsel vücudun yalnızca bir kısmını gösteriyorsa, eksik kısımları tutarlı bir şekilde tamamla.
+- Alt vücut eksikse: uyumlu pantolon/etek stili çıkar
+- Ayakkabı eksikse: kıyafete uygun ayakkabı çıkar
+- Aksesuar detayları eksikse: birkaç makul aksesuar çıkar
+
+## Yasak içerik
+Şunlardan bahsetme:
+- Ten rengi
+- Göz rengi
+- Yüz ifadesi
+- Poz veya hareket
+- Arka plan
+
+## Çıktı formatı
+Yalnızca tek bir düz Türkçe paragraf döndür (yaklaşık 120-220 kelime).
+Markdown, madde işareti, başlık veya JSON döndürme.

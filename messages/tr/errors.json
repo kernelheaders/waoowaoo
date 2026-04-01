@@ -1,0 +1,23 @@
+{
+    "UNAUTHORIZED": "Lütfen önce giriş yapın",
+    "FORBIDDEN": "Erişim reddedildi",
+    "NOT_FOUND": "Kaynak bulunamadı",
+    "INSUFFICIENT_BALANCE": "Yetersiz API bakiyesi. Lütfen bakiye yükleyin ve tekrar deneyin",
+    "RATE_LIMIT": "Çok fazla istek. Lütfen {retryAfter} saniye sonra tekrar deneyin",
+    "MODEL_NOT_OPEN": "Model izni etkinleştirilmedi. https://console.volcengine.com/ark/region:ark+cn-beijing/openManagement?LLM=%7B%7D&advancedActiveKey=model adresine gidin ve Model Yönetimi'nin sağ üst köşesindeki \"Tüm modelleri etkinleştir\" düğmesine tıklayın",
+    "MODEL_NOT_REGISTERED": "Model kayıtlı değil. Önce yapılandırmada kullanılabilir bir model ekleyin",
+    "MODEL_NOT_CONFIGURED": "Model yapılandırılmadı. Lütfen oluşturmadan önce Ayarlar'a gidin ve gerekli model türünü ekleyin.",
+    "QUOTA_EXCEEDED": "Kota aşıldı. Lütfen daha sonra tekrar deneyin",
+    "GENERATION_FAILED": "Oluşturma başarısız oldu. Lütfen tekrar deneyin",
+    "GENERATION_TIMEOUT": "Oluşturma zaman aşımına uğradı. Lütfen tekrar deneyin",
+    "SENSITIVE_CONTENT": "İçerik hassas materyal içerebilir",
+    "INVALID_PARAMS": "Geçersiz parametreler",
+    "MISSING_CONFIG": "Lütfen önce model yapılandırmasını tamamlayın",
+    "INTERNAL_ERROR": "Sunucu hatası. Lütfen daha sonra tekrar deneyin",
+    "NETWORK_ERROR": "Ağ hatası. Lütfen bağlantınızı kontrol edin",
+    "EMPTY_RESPONSE": "Model boş bir yanıt döndürdü (anlamlı içerik yok). Lütfen tekrar deneyin",
+    "EXTERNAL_ERROR": "Harici hizmet geçici olarak kullanılamıyor. Lütfen daha sonra tekrar deneyin",
+    "TASK_NOT_READY": "Görev hâlâ işleniyor",
+    "NO_RESULT": "Görevin sonucu yok",
+    "CONFLICT": "Kaynak durumu çakışması"
+}

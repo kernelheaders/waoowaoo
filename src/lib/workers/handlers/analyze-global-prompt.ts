@@ -28,10 +28,10 @@ export function buildAnalyzeGlobalPrompts(params: {
     .replace('{characters_lib_info}', buildCharactersLibInfo(params.existingCharacters))
   const locationPrompt = params.templates.locationPromptTemplate
     .replace('{input}', params.chunk)
-    .replace('{locations_lib_name}', params.existingLocationInfo.join(', ') || '无')
+    .replace('{locations_lib_name}', params.existingLocationInfo.join(', ') || 'None')
   const propPrompt = params.templates.propPromptTemplate
     .replace('{input}', params.chunk)
-    .replace('{props_lib_name}', params.existingPropNames.join(', ') || '无')
+    .replace('{props_lib_name}', params.existingPropNames.join(', ') || 'None')
   return {
     characterPrompt,
     locationPrompt,

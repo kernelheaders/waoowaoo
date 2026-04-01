@@ -290,10 +290,10 @@ export async function handleStoryToScriptTask(job: Job<TaskJobData>) {
 
         const screenplayPrompt = screenplayPromptTemplate
           .replace('{clip_content}', clipContent)
-          .replace('{locations_lib_name}', asString(splitPayload.locationsLibName) || '无')
-          .replace('{characters_lib_name}', asString(splitPayload.charactersLibName) || '无')
-          .replace('{props_lib_name}', asString(splitPayload.propsLibName) || '无')
-          .replace('{characters_introduction}', asString(splitPayload.charactersIntroduction) || '暂无角色介绍')
+          .replace('{locations_lib_name}', asString(splitPayload.locationsLibName) || 'None')
+          .replace('{characters_lib_name}', asString(splitPayload.charactersLibName) || 'None')
+          .replace('{props_lib_name}', asString(splitPayload.propsLibName) || 'None')
+          .replace('{characters_introduction}', asString(splitPayload.charactersIntroduction) || 'No character introductions yet')
           .replace('{clip_id}', retryClipId)
 
         const stepMeta: StoryToScriptStepMeta = {

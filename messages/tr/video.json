@@ -1,0 +1,210 @@
+{
+  "panelCard": {
+    "play": "Oynat",
+    "pause": "Duraklat",
+    "retry": "Tekrar Dene",
+    "regenerate": "Yeniden Oluştur",
+    "download": "İndir",
+    "edit": "Düzenle",
+    "save": "Kaydet",
+    "cancel": "İptal",
+    "generating": "Oluşturuluyor...",
+    "failed": "Başarısız",
+    "lipSync": "Dudak Senkronu",
+    "lipSyncVideo": "Dudak Senkronlu Video",
+    "lipSyncLabel": "Dudak Senkronu",
+    "lipSyncTitle": "Dudak Senkronu",
+    "original": "Orijinal",
+    "synced": "Senkronlu",
+    "videoFixed": "✓ Video",
+    "imagePreview": "Görsel Önizleme",
+    "playVoice": "Sesi Oynat",
+    "stopVoice": "Durdur",
+    "noVoice": "Ses mevcut değil",
+    "forceRegenerate": "Zorla Yeniden Oluştur (takılırsa kullanın)",
+    "regenerateVideo": "Videoyu Yeniden Oluştur",
+    "lipSyncStatus": "Dudak senkronu yapılıyor...",
+    "lipSyncInProgress": "Dudak senkronu devam ediyor...",
+    "lipSyncMayTakeMinutes": "Bu birkaç dakika sürebilir",
+    "audioEnabled": "Ses etkin",
+    "audioDisabled": "Ses devre dışı",
+    "isSynced": "(Senkronlu)",
+    "needVideo": "(Lütfen önce video oluşturun)",
+    "needAudio": "(Lütfen önce ses oluşturun)",
+    "generateAudio": "Ses Oluştur",
+    "regenerateLipSync": "Dudak Senkronunu Yeniden Oluştur",
+    "editPrompt": "İstemi Düzenle",
+    "clickToEditPrompt": "İstemi düzenlemek için tıklayın...",
+    "shot": "Çekim {number}",
+    "unknownShotType": "Bilinmiyor",
+    "correspondingText": "İlgili Metin",
+    "generateVideo": "Video Oluştur",
+    "selectModel": "Video Modeli Seçin",
+    "selectVoice": "Kullanılacak sesi seçin:",
+    "willAutoPad": "(otomatik uzatılacak)",
+    "autoPadding": "Uzatma",
+    "redo": "Yeniden Yap",
+    "generatingAudio": "Oluşturuluyor...",
+    "error": {
+      "audioFailed": "Ses oluşturma başarısız"
+    },
+    "batchMode": "Toplu Mod",
+    "batchModeDesc": "Çevrimdışı çıkarım, %50 daha ucuz, 24 saat içinde tamamlanır",
+    "batchModeEnabled": "Toplu mod etkin",
+    "batchModeDisabled": "Toplu mod devre dışı"
+  },
+  "promptModal": {
+    "title": "Çekim #{number} Video İstemini Düzenle",
+    "shotType": "Çekim Türü:",
+    "duration": "sn",
+    "location": "Mekan:",
+    "locationUnknown": "Bilinmiyor",
+    "characters": "Karakterler:",
+    "charactersNone": "Hiçbiri",
+    "description": "Açıklama:",
+    "text": "İlgili Metin:",
+    "promptLabel": "Video İstemi",
+    "placeholder": "Video istemi girin...",
+    "tip": "İpucu: Video modelleri karakter isimlerini tanımaz, \"Victor\" yerine \"siyah saçlı mavi gözlü genç adam\" gibi görünüm açıklamaları kullanın",
+    "save": "Kaydet",
+    "cancel": "İptal"
+  },
+  "toolbar": {
+    "title": "Video Oluşturma",
+    "filter": "Filtrele",
+    "viewAll": "Tümünü Görüntüle",
+    "showGenerated": "Oluşturulmuş",
+    "showPending": "Bekleyen",
+    "showFailed": "Başarısız",
+    "totalShots": "Toplam {count} çekim",
+    "generatingShots": "{count} oluşturuluyor",
+    "completedShots": "{count} tamamlandı",
+    "failedShots": "{count} başarısız",
+    "generateAll": "Tüm Videoları Oluştur",
+    "batchConfigTitle": "Toplu Oluşturma Ayarları",
+    "batchConfigDesc": "Tüm videoları oluşturmadan önce model ve parametreleri seçin.",
+    "confirmGenerateAll": "Onayla ve Tümünü Oluştur",
+    "confirming": "Gönderiliyor...",
+    "noVideos": "İndirilecek video yok",
+    "downloadCount": "{count} videoyu indir",
+    "packing": "Paketleniyor...",
+    "downloadAll": "Tümünü İndir",
+    "enterEditor": "Video Editörüne Gir",
+    "enterEdit": "Editöre Gir",
+    "back": "Geri"
+  },
+  "stage": {
+    "title": "Video Oluşturma",
+    "generateAll": "Tümünü Oluştur",
+    "regenerateFailed": "Başarısızları Tekrar Dene",
+    "downloadAll": "Tüm Videoları İndir",
+    "enterEditor": "Editöre Gir",
+    "lipSyncStatus": "Dudak senkronu yapılıyor...",
+    "hasSynced": "✓ Oluşturuldu",
+    "generating": "Oluşturuluyor...",
+    "downloading": "İndiriliyor...",
+    "downloadProgress": "Video dosyaları hazırlanıyor... {current}/{total}",
+    "noVideos": "Oluşturulmuş video yok",
+    "scrollTo": "Çekime atla",
+    "error": {
+      "saveFailed": "Video istemi kaydetme başarısız",
+      "lipSyncFailed": "Dudak senkronu başarısız",
+      "fetchVideosFailed": "Video listesi alınamadı"
+    },
+    "downloadFailed": "İndirme başarısız",
+    "unknownError": "Bilinmeyen hata"
+  },
+  "firstLastFrame": {
+    "title": "İlk/Son Kare Ayarları",
+    "firstFrame": "İlk Kare",
+    "lastFrame": "Son Kare",
+    "range": "Çekim {from} → Çekim {to}",
+    "link": "Bağla",
+    "unlink": "Bağlantıyı Kaldır",
+    "unlinkAction": "Bağlantıyı Kaldır",
+    "asLastFrameFor": "Çekim {number} için son kare olarak",
+    "asFirstFrameFor": "Çekim {number} için ilk kare olarak",
+    "customPrompt": "Özel İstem",
+    "promptPlaceholder": "İlk/son kare video istemi girin...",
+    "useDefault": "Varsayılanı Kullan",
+    "generate": "İlk/Son Kare Video Oluştur",
+    "generated": "İlk/Son Kare Video Oluşturuldu",
+    "model": "Model",
+    "withAudio": "Sesli",
+    "audioOn": "Açık",
+    "audioOff": "Kapalı",
+    "linkToNext": "Sonraki panele bağla (İlk/Son Kare)",
+    "asLastFrame": "Panel {number} için son kare olarak",
+    "thenTransitionTo": "ardından geçiş yap"
+  },
+  "editor": {
+    "alert": {
+      "saveSuccess": "Başarıyla kaydedildi",
+      "saveFailed": "Kaydetme başarısız",
+      "exportStarted": "Dışa aktarma başlatıldı. Lütfen bekleyin...",
+      "exportFailed": "Dışa aktarma başarısız"
+    },
+    "toolbar": {
+      "back": "← Geri",
+      "saveDirty": "Kaydet *",
+      "saved": "Kaydedildi",
+      "export": "Videoyu Dışa Aktar"
+    },
+    "left": {
+      "title": "Medya Kütüphanesi",
+      "description": "Video aşamasından içe aktarılan klipler burada görünecektir"
+    },
+    "right": {
+      "title": "Özellikler",
+      "clipLabel": "Klip:",
+      "clipFallback": "Klip {index}",
+      "durationLabel": "Süre:",
+      "transitionLabel": "Sonraki Klibe Geçiş",
+      "deleteConfirm": "Bu klip silinsin mi?",
+      "deleteClip": "Klibi Sil",
+      "selectClipHint": "Özellikleri görüntülemek için bir klip seçin"
+    },
+    "preview": {
+      "emptyStartEditing": "Düzenlemeye başlamak için medya ekleyin"
+    },
+    "timeline": {
+      "zoomLabel": "Yakınlaştırma:",
+      "videoTrack": "Video",
+      "emptyHint": "Medya kütüphanesinden video klipleri buraya sürükleyin",
+      "audioTrack": "Ses",
+      "audioBadge": "S"
+    },
+    "transition": {
+      "title": "Geçiş",
+      "duration": "Süre",
+      "options": {
+        "none": "Hiçbiri",
+        "dissolve": "Çözünme",
+        "fade": "Solma",
+        "slide": "Kayma"
+      }
+    }
+  },
+  "errors": {
+    "unknownError": "Bilinmeyen hata"
+  },
+  "capability": {
+    "generationMode": "Oluşturma modu",
+    "generateAudio": "Ses oluştur",
+    "duration": "Süre",
+    "fps": "Kare hızı",
+    "resolution": "Çözünürlük",
+    "aspectRatio": "En boy oranı",
+    "reasoningEffort": "Akıl yürütme çabası",
+    "voice": "Ses",
+    "rate": "Hız",
+    "mode": "Mod"
+  },
+  "unit": {
+    "second": "sn",
+    "frame": "fps"
+  },
+  "common": {
+    "generate": "Oluştur"
+  }
+}

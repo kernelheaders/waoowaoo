@@ -1,0 +1,19 @@
+{
+    "selectCharacter": "Varlık Merkezinden Karakter Seç",
+    "selectLocation": "Varlık Merkezinden Mekan Seç",
+    "selectProp": "Varlık Merkezinden Aksesuar Seç",
+    "selectVoice": "Varlık Merkezinden Ses Seç",
+    "searchPlaceholder": "Ad veya klasörle arayın...",
+    "noAssets": "Varlık Merkezinde varlık yok",
+    "createInAssetHub": "Lütfen önce Varlık Merkezinde karakter/mekan/ses oluşturun",
+    "noSearchResults": "Eşleşen varlık bulunamadı",
+    "appearances": "görünüm",
+    "images": "görsel",
+    "cancel": "İptal",
+    "confirmCopy": "Kopyalamayı Onayla",
+    "copyFromGlobal": "Varlık Merkezinden Kopyala",
+    "copySuccess": "Kopyalama başarılı",
+    "copyFailed": "Kopyalama başarısız",
+    "preview": "Önizleme",
+    "stop": "Durdur"
+}

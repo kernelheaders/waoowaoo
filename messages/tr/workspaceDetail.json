@@ -1,0 +1,37 @@
+{
+  "globalAssets": "Genel Varlıklar",
+  "createFailed": "Oluşturma başarısız oldu",
+  "deleteFailed": "Silme başarısız oldu",
+  "renameFailed": "Yeniden adlandırma başarısız oldu",
+  "refreshFailed": "Yenileme başarısız oldu",
+  "projectNotFound": "Proje bulunamadı",
+  "backToWorkspace": "Çalışma Alanına Dön",
+  "episode": "Bölüm",
+  "modelSetup": {
+    "title": "Başlamadan önce varsayılan modelleri ayarlayın",
+    "description": "Bu hesap için varsayılan analiz modeli yapılandırılmamış. Akıllı bölme ve ilgili AI akışları ayarlanmadan çalıştırılamaz.",
+    "configureNow": "Analiz Modelini Yapılandır",
+    "goProfile": "Profil Ayarlarına Git",
+    "modalTitle": "Varsayılan Analiz Modelini Yapılandır",
+    "modalDescription": "Varsayılan analiz modeli olarak uygun bir metin modeli seçin.",
+    "selectModelLabel": "Varsayılan Analiz Modeli",
+    "selectModelPlaceholder": "Bir analiz modeli seçin",
+    "selectModelFirst": "Lütfen önce bir analiz modeli seçin",
+    "noModelOptions": "Kullanılabilir metin modeli yok. Önce Profil ayarlarında sağlayıcı ve modelleri yapılandırın.",
+    "saveFailed": "Varsayılan analiz modeli kaydedilemedi. Lütfen tekrar deneyin."
+  },
+  "sidebar": {
+    "dragToMove": "Konumu değiştirmek için sürükleyin",
+    "listTitle": "Bölüm Listesi",
+    "episodeCount": "{count} bölüm",
+    "empty": "Henüz bölüm yok. Aşağıdan oluşturun.",
+    "save": "Kaydet",
+    "deleteConfirm": "\"{name}\" silinsin mi?",
+    "delete": "Sil",
+    "cancel": "İptal",
+    "rename": "Yeniden Adlandır",
+    "newEpisodePlaceholder": "Bölüm adını girin...",
+    "create": "Oluştur",
+    "addEpisode": "Bölüm Ekle"
+  }
+}

@@ -1,0 +1,41 @@
+Sen uzun metin bölüm ayırıcısısın.
+Tam metni analiz et ve dengeli bölümlere ayır.
+
+Girdi metni:
+{CONTENT}
+
+Temel kurallar:
+1. Bölüm uzunluklarını mümkün olduğunca dengeli tut.
+2. Doğal kırılma noktalarını tercih et (bölüm sınırı, sahne değişimi, zaman atlama).
+3. Kronolojik sırayı ve tam kapsamı koru (çakışma yok, eksik metin yok).
+4. Kaynak metinden kopyalanmış güvenilir startMarker ve endMarker sağla.
+5. Yalnızca JSON döndür.
+6. ⚠️ JSON GÜVENLİĞİ: Metindeki tüm tırnak işaretleri (""''「」 vb.) JSON string değerlerinde köşeli parantezlere「」dönüştürülmeli. String değerlerin içinde ASLA ham ASCII çift tırnak " kullanma.
+
+Çıktı formatı:
+{
+  "analysis": {
+    "totalWords": 0,
+    "episodeCount": 0,
+    "targetWordsPerEpisode": 0,
+    "allowedRange": "0-0"
+  },
+  "episodes": [
+    {
+      "number": 1,
+      "title": "Bölüm başlığı",
+      "summary": "Kısa özet",
+      "estimatedWords": 0,
+      "startMarker": "tam başlangıç işareti",
+      "endMarker": "tam bitiş işareti",
+      "startIndex": 0,
+      "endIndex": 0
+    }
+  ],
+  "validation": {
+    "maxWords": 0,
+    "minWords": 0,
+    "variance": 0,
+    "isBalanced": true
+  }
+}

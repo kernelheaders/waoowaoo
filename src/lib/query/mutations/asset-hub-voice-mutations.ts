@@ -29,7 +29,7 @@ export function useDesignAssetHubVoice() {
       voicePrompt: string
       previewText: string
       preferredName: string
-      language: 'zh'
+      language: 'tr'
     }) => {
       const response = await requestTaskResponseWithError(
         '/api/asset-hub/voice-design',
@@ -84,7 +84,7 @@ export function useSaveDesignedAssetHubVoice() {
           customVoiceUrl: uploadData.key,
           voicePrompt: payload.voicePrompt,
           gender: null,
-          language: 'zh',
+          language: 'tr',
         }),
       }, '保存失败')
       return res

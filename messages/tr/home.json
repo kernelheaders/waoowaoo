@@ -1,0 +1,15 @@
+{
+  "title": "Hızlı Başlangıç",
+  "subtitle": "Hikayenizi anlatın ve AI'ın sinematik kısa diziler oluşturmasına izin verin",
+  "inputPlaceholder": "Hikaye fikrinizi, roman alıntınızı veya senaryo taslağınızı girin...",
+  "startCreation": "Oluşturmaya Başla",
+  "recentProjects": "Son Projeler",
+  "viewAll": "Tüm Projeleri Görüntüle",
+  "noProjects": "Henüz proje yok. Yukarıdan ilk eserinizi oluşturmaya başlayın!",
+  "ago": {
+    "justNow": "Az önce",
+    "minutesAgo": "{n}dk önce",
+    "hoursAgo": "{n}sa önce",
+    "daysAgo": "{n}g önce"
+  }
+}

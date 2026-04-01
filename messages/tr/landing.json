@@ -1,0 +1,27 @@
+{
+  "title": "waoowaoo",
+  "subtitle": "AI Film ve TV Stüdyosu",
+  "enterWorkspace": "Çalışma Alanına Gir",
+  "loading": "Yükleniyor...",
+  "getStarted": "Başlayın",
+  "learnMore": "Daha Fazla Bilgi",
+  "features": {
+    "title": "Sınırsız Yaratıcılığı Serbest Bırakın",
+    "subtitle": "Senaryodan son montaja kadar tam süreç AI desteği",
+    "character": {
+      "title": "Karakter Atölyesi",
+      "description": "Yüksek tutarlılıkla benzersiz anime karakterleri oluşturun"
+    },
+    "storyboard": {
+      "title": "Akıllı Storyboard",
+      "description": "Tek tıkla metinden storyboard'a, hassas anlatım kontrolü"
+    },
+    "world": {
+      "title": "Dünya İnşası",
+      "description": "Büyük hikaye arka planları oluşturmak için sürükleyici sahne üretimi"
+    }
+  },
+  "footer": {
+    "copyright": "2026 waoowaoo AI. Tüm hakları saklıdır."
+  }
+}

@@ -17,8 +17,8 @@ function readRequiredString(value: unknown, field: string): string {
   return value.trim()
 }
 
-function readLanguage(value: unknown): 'zh' | 'en' {
-  return value === 'en' ? 'en' : 'zh'
+function readLanguage(value: unknown): 'tr' | 'en' {
+  return value === 'en' ? 'en' : 'tr'
 }
 
 export async function handleVoiceDesignTask(job: Job<TaskJobData>) {
@@ -41,7 +41,7 @@ export async function handleVoiceDesignTask(job: Job<TaskJobData>) {
 
   await reportTaskProgress(job, 25, {
     stage: 'voice_design_submit',
-    stageLabel: '提交声音设计任务',
+    stageLabel: 'Submitting voice design task',
     displayMode: 'detail',
   })
   await assertTaskActive(job, 'voice_design_submit')
@@ -55,12 +55,12 @@ export async function handleVoiceDesignTask(job: Job<TaskJobData>) {
   }
   const designed = await createVoiceDesign(input, apiKey)
   if (!designed.success) {
-    throw new Error(designed.error || '声音设计失败')
+    throw new Error(designed.error || 'Voice design failed')
   }
 
   await reportTaskProgress(job, 96, {
     stage: 'voice_design_done',
-    stageLabel: '声音设计完成',
+    stageLabel: 'Voice design completed',
     displayMode: 'detail',
   })
 

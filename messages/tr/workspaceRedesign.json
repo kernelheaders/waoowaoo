@@ -1,0 +1,77 @@
+{
+  "pageTitle": "Ana Sayfa Yeniden Tasarım Testi",
+  "switchVariant": "Düzeni Değiştir",
+  "currentVariant": "Mevcut Düzen",
+  "inputPlaceholder": "Oluşturmak istediğiniz hikayeyi anlatın...",
+  "startCreation": "Oluşturmaya Başla",
+  "recentProjects": "Son Projeler",
+  "viewAll": "Tümünü Görüntüle",
+  "noRecentProjects": "Son proje yok",
+  "latestUpdate": "Son Güncelleme",
+  "style": "Stil",
+  "ratio": "Oran",
+  "quality": "Kalite",
+  "model": "Model",
+  "styles": {
+    "anime": "Anime",
+    "realistic": "Gerçekçi",
+    "watercolor": "Suluboya",
+    "cyberpunk": "Siberpunk",
+    "ghibli": "Ghibli",
+    "ink": "Mürekkep Yıkama"
+  },
+  "ratios": {
+    "r16_9": "16:9 Yatay",
+    "r9_16": "9:16 Dikey",
+    "r1_1": "1:1 Kare",
+    "r4_3": "4:3 Klasik"
+  },
+  "qualities": {
+    "standard": "Standart",
+    "high": "Yüksek",
+    "ultra": "Ultra"
+  },
+  "quickActions": {
+    "title": "Hızlı Başlangıç",
+    "fromNovel": "Romandan İçe Aktar",
+    "fromScript": "Senaryodan Oluştur",
+    "fromScratch": "Sıfırdan Başla",
+    "fromTemplate": "Şablon Kullan"
+  },
+  "mockProject": {
+    "name1": "Kampüs Gençlik Hikayesi",
+    "desc1": "Lise hayatı hakkında romantik bir hikaye",
+    "name2": "Yıldız Yolculuğu Günlüğü",
+    "desc2": "Bir uzay macerası bilim kurgu kısa dizisi",
+    "name3": "Kadim Xianxia Günlükleri",
+    "desc3": "Bir yetiştirme dünyasında aşk ve rekabet",
+    "name4": "Şehir Karşılaşmaları",
+    "desc4": "Modern bir şehirde harika karşılaşmalar",
+    "name5": "Son Yolcular",
+    "desc5": "Kıyamet sonrası bir dünyada hayatta kalma yolculuğu"
+  },
+  "variantNames": {
+    "v1": "Izgara Kartlar",
+    "v2": "Yatay Kaydırma",
+    "v3": "Kompakt Liste",
+    "v4": "Öne Çıkan İlk",
+    "v5": "Minimal Liste"
+  },
+  "variantDescs": {
+    "v1": "Sistem kart stiliyle standart 5 sütunlu ızgara",
+    "v2": "Yakalama özellikli yatay kaydırılabilir kartlar",
+    "v3": "Sol-sağ bilgili tek satır liste",
+    "v4": "Büyük ilk kart + küçük kart ızgarası",
+    "v5": "Giriş genişliğine uyan minimal nokta listesi"
+  },
+  "episodes": "Bölümler",
+  "images": "Görseller",
+  "videos": "Videolar",
+  "updated": "Güncellendi",
+  "ago": {
+    "justNow": "Az önce",
+    "minutesAgo": "{n}dk önce",
+    "hoursAgo": "{n}sa önce",
+    "daysAgo": "{n}g önce"
+  }
+}

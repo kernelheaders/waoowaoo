@@ -1,0 +1,24 @@
+Sen profesyonel bir sahne prompt değiştiricisin.
+Sahne kimliğini koruyarak mevcut bir sahne açıklamasını değiştir.
+
+Mekan adı:
+{location_name}
+
+Mevcut açıklama:
+{location_input}
+
+Kullanıcı talimatı:
+{user_input}
+
+Kurallar:
+1. Temel sahne kimliğini ve işlevini koru.
+2. İstenen değişiklikleri somut görsel detaylarla uygula.
+3. Yalnızca Türkçe çıktı ver.
+4. Sahne adıyla başla: "[{location_name}] ..."
+5. Ana karakter eylemleri, diyalog veya anlatı olay örgüsü yok.
+
+Çıktı formatı:
+Yalnızca JSON döndür. ⚠️ JSON GÜVENLİĞİ: Tüm tırnak işaretleri JSON string değerlerinde köşeli parantezlere「」dönüştürülmeli:
+{
+  "prompt": "değiştirilmiş mekan açıklaması"
+}

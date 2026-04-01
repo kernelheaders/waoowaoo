@@ -55,8 +55,8 @@ export async function handleModifyAssetImageTask(job: Job<TaskJobData>) {
   const editModel = projectModels.editModel
   if (!editModel) throw new Error('Edit model not configured')
 
-  // 从 payload.generationOptions 读取 resolution（由 route 层 buildImageBillingPayload 注入）
-  // 与老版本 getModelResolution 等价，但数据来源改为 capabilityDefaults/capabilityOverrides 体系
+  // Read resolution from payload.generationOptions (injected by route layer buildImageBillingPayload)
+  // Equivalent to the old getModelResolution, but data source is now the capabilityDefaults/capabilityOverrides system
   const generationOptions = payload.generationOptions as Record<string, unknown> | undefined
   const resolution = typeof generationOptions?.resolution === 'string'
     ? generationOptions.resolution
@@ -96,7 +96,7 @@ export async function handleModifyAssetImageTask(job: Job<TaskJobData>) {
       index: imageIndex,
     })
 
-    const prompt = `请根据以下指令修改图片，保持人物核心特征一致：\n${modifyInstruction}`
+    const prompt = `Please modify the image according to the following instructions, keeping the character's core features consistent:\n${modifyInstruction}`
     const source = await resolveImageSourceFromGeneration(job, {
       userId: job.data.userId,
       modelId: editModel,
@@ -108,7 +108,7 @@ export async function handleModifyAssetImageTask(job: Job<TaskJobData>) {
       },
     })
 
-    const label = `${appearance.character?.name || '角色'} - ${appearance.changeReason || '形象'}`
+    const label = `${appearance.character?.name || 'Character'} - ${appearance.changeReason || 'Appearance'}`
     const labeled = await withLabelBar(source, label)
     const cosKey = await uploadImageSourceToCos(labeled, 'character-modify', appearance.id)
 
@@ -142,7 +142,7 @@ export async function handleModifyAssetImageTask(job: Job<TaskJobData>) {
           })
         }
       } catch (err) {
-        logger.warn({ message: '项目角色描述同步失败，不影响改图结果', details: { error: String(err) } })
+        logger.warn({ message: 'Character description sync failed, does not affect image modification result', details: { error: String(err) } })
       }
     }
 
@@ -199,7 +199,7 @@ export async function handleModifyAssetImageTask(job: Job<TaskJobData>) {
     const normalizedExtras = await normalizeReferenceImagesForGeneration(extraReferenceInputs)
     const referenceImages = Array.from(new Set([requiredReference, ...normalizedExtras]))
 
-    const prompt = `请根据以下指令修改场景图片，保持整体风格一致：\n${modifyInstruction}`
+    const prompt = `Please modify the scene image according to the following instructions, keeping the overall style consistent:\n${modifyInstruction}`
     const source = await resolveImageSourceFromGeneration(job, {
       userId: job.data.userId,
       modelId: editModel,
@@ -211,7 +211,7 @@ export async function handleModifyAssetImageTask(job: Job<TaskJobData>) {
       },
     })
 
-    const label = locationImage.location?.name || '场景'
+    const label = locationImage.location?.name || 'Scene'
     const labeled = await withLabelBar(source, label)
     const cosKey = await uploadImageSourceToCos(labeled, 'location-modify', locationImage.id)
 
@@ -229,12 +229,12 @@ export async function handleModifyAssetImageTask(job: Job<TaskJobData>) {
             currentDescription: locationImage.description,
             modifyInstruction,
             referenceImages: normalizedExtras,
-            locationName: locationImage.location?.name || '场景',
+            locationName: locationImage.location?.name || 'Scene',
             projectId: job.data.projectId,
           })
         }
       } catch (err) {
-        logger.warn({ message: '项目场景描述同步失败，不影响改图结果', details: { error: String(err) } })
+        logger.warn({ message: 'Scene description sync failed, does not affect image modification result', details: { error: String(err) } })
       }
     }
 
@@ -318,7 +318,7 @@ export async function handleModifyAssetImageTask(job: Job<TaskJobData>) {
 
     const normalizedExtras = await normalizeReferenceImagesForGeneration(extraReferenceInputs)
     const uniqueReferences = Array.from(new Set([requiredReference, ...normalizedExtras]))
-    const prompt = `请根据以下指令修改分镜图片，保持镜头语言和主体一致：\n${modifyPrompt}`
+    const prompt = `Please modify the storyboard image according to the following instructions, keeping the shot language and subject consistent:\n${modifyPrompt}`
     const source = await resolveImageSourceFromGeneration(job, {
       userId: job.data.userId,
       modelId: editModel,

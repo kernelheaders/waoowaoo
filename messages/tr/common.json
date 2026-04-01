@@ -1,0 +1,148 @@
+{
+    "appName": "waoowaoo",
+    "betaVersion": "Beta v{version}",
+    "updateNotice": {
+        "title": "Yeni sürüm mevcut",
+        "subtitle": "Mevcut v{current} · En son v{latest}",
+        "description": "GitHub Releases'de daha yeni bir sürüm yayınlandı. Güvenli bir şekilde güncellemek için değişiklik günlüğünü görüntüleyin.",
+        "releaseName": "Sürüm",
+        "publishedAt": "Yayınlanma",
+        "updateTag": "Güncelleme",
+        "viewRelease": "Güncellemeyi görüntüle",
+        "remindLater": "Daha sonra hatırlat",
+        "close": "Kapat",
+        "openDialog": "Güncelleme penceresini aç",
+        "checkUpdate": "Güncellemeleri kontrol et",
+        "upToDate": "Zaten güncel"
+    },
+    "loading": "Yükleniyor...",
+    "save": "Kaydet",
+    "cancel": "İptal",
+    "confirm": "Onayla",
+    "delete": "Sil",
+    "edit": "Düzenle",
+    "search": "Ara",
+    "clear": "Temizle",
+    "close": "Kapat",
+    "back": "Geri",
+    "next": "İleri",
+    "previous": "Önceki",
+    "submit": "Gönder",
+    "reset": "Sıfırla",
+    "generate": "Oluştur",
+    "regenerate": "Yeniden Oluştur",
+    "preview": "Önizleme",
+    "download": "İndir",
+    "upload": "Yükle",
+    "select": "Seç",
+    "add": "Ekle",
+    "remove": "Kaldır",
+    "refresh": "Yenile",
+    "expand": "Genişlet",
+    "collapse": "Daralt",
+    "all": "Tümü",
+    "none": "Hiçbiri",
+    "success": "Başarılı",
+    "error": "Hata",
+    "warning": "Uyarı",
+    "info": "Bilgi",
+    "copy": "Kopyala",
+    "paste": "Yapıştır",
+    "apply": "Uygula",
+    "autoSave": "Otomatik kayıt",
+    "saved": "Kaydedildi",
+    "episode": "Bölüm",
+    "project": "Proje",
+    "editEpisodeName": "Bölüm Adını Düzenle",
+    "deleteEpisode": "Bölümü Sil",
+    "deleteEpisodeConfirm": "Silmeyi Onayla",
+    "newEpisode": "Yeni Bölüm",
+    "optional": "(İsteğe Bağlı)",
+    "rename": "Yeniden Adlandır",
+    "dragToReorder": "Yeniden sıralamak için sürükleyin",
+    "episodeNamePlaceholder": "Bölüm adı girin...",
+    "cancelSelection": "Seçimi iptal et",
+    "referenceImage": "Referans görseli",
+    "previewLarge": "Büyük önizleme",
+    "viewOriginal": "Orijinali görüntüle",
+    "schemeN": "Plan {n}",
+    "insufficientBalance": "Yetersiz Bakiye",
+    "insufficientBalanceDetail": "Hesap bakiyesi yetersiz, devam etmek için lütfen bakiye yükleyin",
+    "operationFailed": "İşlem başarısız",
+    "pleaseRetry": "Lütfen tekrar deneyin",
+    "recommended": "Önerilen",
+    "language": {
+        "select": "Dil seçin",
+        "zh": "Çince",
+        "en": "İngilizce",
+        "switchConfirmTitle": "Dil değiştirilsin mi?",
+        "switchConfirmMessage": "{targetLanguage} diline geçiş yalnızca arayüz metnini değil, aynı zamanda uçtan uca istemleri, senaryo oluşturmayı ve iş akışı çıktılarını da güncelleyecektir. Devam edilsin mi?",
+        "switchConfirmAction": "Şimdi değiştir"
+    },
+    "taskStatus": {
+        "intent": {
+            "generate": {
+                "running": {
+                    "image": "Oluşturuluyor",
+                    "video": "Oluşturuluyor",
+                    "audio": "Oluşturuluyor",
+                    "text": "Oluşturuluyor"
+                }
+            },
+            "regenerate": {
+                "running": {
+                    "image": "Yeniden Oluşturuluyor",
+                    "video": "Yeniden Oluşturuluyor",
+                    "audio": "Yeniden Oluşturuluyor",
+                    "text": "Yeniden Oluşturuluyor"
+                }
+            },
+            "modify": {
+                "running": {
+                    "image": "Düzenleniyor",
+                    "video": "Düzenleniyor",
+                    "audio": "Düzenleniyor",
+                    "text": "Düzenleniyor"
+                }
+            },
+            "analyze": {
+                "running": {
+                    "image": "Analiz Ediliyor",
+                    "video": "Analiz Ediliyor",
+                    "audio": "Analiz Ediliyor",
+                    "text": "Analiz Ediliyor"
+                }
+            },
+            "build": {
+                "running": {
+                    "image": "İnşa Ediliyor",
+                    "video": "İnşa Ediliyor",
+                    "audio": "İnşa Ediliyor",
+                    "text": "İnşa Ediliyor"
+                }
+            },
+            "convert": {
+                "running": {
+                    "image": "Dönüştürülüyor",
+                    "video": "Dönüştürülüyor",
+                    "audio": "Dönüştürülüyor",
+                    "text": "Dönüştürülüyor"
+                }
+            },
+            "process": {
+                "running": {
+                    "image": "İşleniyor",
+                    "video": "İşleniyor",
+                    "audio": "İşleniyor",
+                    "text": "İşleniyor"
+                }
+            }
+        },
+        "failed": {
+            "image": "Başarısız",
+            "video": "Başarısız",
+            "audio": "Başarısız",
+            "text": "Başarısız"
+        }
+    }
+}

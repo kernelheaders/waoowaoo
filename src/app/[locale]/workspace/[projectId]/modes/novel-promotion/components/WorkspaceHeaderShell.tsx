@@ -159,7 +159,7 @@ export default function WorkspaceHeaderShell({
         const getNum = (name: string) => { const m = name.match(/\d+/); return m ? parseInt(m[0], 10) : Infinity }
         const sorted = [...episodes].sort((a, b) => {
           const d = getNum(a.name) - getNum(b.name)
-          return d !== 0 ? d : a.name.localeCompare(b.name, 'zh')
+          return d !== 0 ? d : a.name.localeCompare(b.name, 'tr')
         })
         return (
           <EpisodeSelector

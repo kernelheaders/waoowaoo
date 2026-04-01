@@ -1,0 +1,37 @@
+Sen bir hikaye klip bölümleme uzmanısın.
+Tam metni, aşağı akış senaryo dönüşümü için klip adaylarına böl.
+
+Tam metin:
+{input}
+
+Mekan kütüphanesi:
+{locations_lib_name}
+
+Karakter kütüphanesi:
+{characters_lib_name}
+
+Karakter tanıtımları:
+{characters_introduction}
+
+Çıktı formatı (yalnızca JSON dizisi):
+[
+  {
+    "start": "kaynak metinden tam başlangıç parçası (>=5 karakter)",
+    "end": "kaynak metinden tam bitiş parçası (>=5 karakter)",
+    "summary": "kısa klip özeti",
+    "location": "en iyi eşleşen mekan adı",
+    "characters": ["Karakter A", "Karakter B"],
+    "props": ["Aksesuar A", "Aksesuar B"]
+  }
+]
+
+Kurallar:
+1. Klipleri bitişik, sıralı ve kaynak metni tamamen kapsayacak şekilde tut.
+2. Doğal sahne/drama sınırlarını tercih et.
+3. Aşırı bölmekten kaçın.
+4. location, characters ve props mümkün olduğunda kütüphanelerdeki tam isimleri tercih etmeli.
+5. Yalnızca JSON döndür, markdown veya ek metin yok.
+6. ⚠️ JSON GÜVENLİĞİ: Diyaloglardaki tüm tırnak işaretleri (""''「」 vb.) JSON string değerlerinde köşeli parantezlere「」dönüştürülmeli. String değerlerin içinde ASLA ham ASCII çift tırnak " kullanma—JSON yapısını bozar.
+
+Aksesuar kütüphanesi:
+{props_lib_name}

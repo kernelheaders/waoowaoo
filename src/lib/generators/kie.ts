@@ -30,6 +30,84 @@ import { getProviderConfig } from '@/lib/api-config'
 import { createScopedLogger } from '@/lib/logging/core'
 
 const KIE_API_BASE = 'https://api.kie.ai'
+const KIE_UPLOAD_BASE = 'https://kieai.redpandaai.co'
+
+// ============================================================
+// KIE 文件上传：将 base64 图片上传到 KIE 获取 URL
+// ============================================================
+
+interface KieUploadResponse {
+    success?: boolean
+    code?: number
+    data?: {
+        fileUrl?: string
+        downloadUrl?: string
+    }
+}
+
+async function uploadBase64ToKie(
+    apiKey: string,
+    base64Data: string,
+    index: number,
+): Promise<string> {
+    // Ensure data URI format: kie.ai expects "data:image/...;base64,..."
+    let dataUri = base64Data
+    if (!dataUri.startsWith('data:')) {
+        dataUri = `data:image/jpeg;base64,${dataUri}`
+    }
+
+    const mimeType = dataUri.match(/^data:(image\/[a-z+]+);/i)?.[1] || 'image/jpeg'
+    const ext = mimeType.includes('png') ? 'png' : mimeType.includes('webp') ? 'webp' : 'jpg'
+
+    const response = await fetch(`${KIE_UPLOAD_BASE}/api/file-base64-upload`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${apiKey}`,
+        },
+        body: JSON.stringify({
+            base64Data: dataUri,
+            uploadPath: 'waoowaoo-refs',
+            fileName: `ref-${Date.now()}-${index}.${ext}`,
+        }),
+    })
+
+    if (!response.ok) {
+        const text = await response.text().catch(() => '')
+        throw new Error(`KIE_UPLOAD_FAILED: ${response.status} ${text.slice(0, 200)}`)
+    }
+
+    const data = (await response.json()) as KieUploadResponse
+    const fileUrl = data.data?.fileUrl || data.data?.downloadUrl
+    if (!fileUrl) {
+        throw new Error('KIE_UPLOAD_NO_URL: Upload succeeded but no URL returned')
+    }
+
+    return fileUrl
+}
+
+/**
+ * Convert reference images to KIE-accessible URLs.
+ * If images are base64 data URIs, upload them to KIE first.
+ * If they are already URLs, use them directly.
+ */
+async function resolveImageUrls(
+    apiKey: string,
+    images: string[],
+): Promise<string[]> {
+    const urls: string[] = []
+    for (let i = 0; i < images.length; i++) {
+        const img = images[i]
+        if (img.startsWith('data:')) {
+            urls.push(await uploadBase64ToKie(apiKey, img, i))
+        } else if (img.startsWith('http://') || img.startsWith('https://')) {
+            urls.push(img)
+        } else {
+            // Skip unsupported formats
+        }
+    }
+    return urls
+}
 
 // ============================================================
 // KIE 共用：提交异步任务
@@ -122,7 +200,14 @@ export class KieImageGenerator extends BaseImageGenerator {
         const input: Record<string, unknown> = { prompt }
 
         if (referenceImages.length > 0) {
-            input.image_input = referenceImages
+            const imageUrls = await resolveImageUrls(apiKey, referenceImages)
+            if (imageUrls.length > 0) {
+                input.image_input = imageUrls
+            }
+            logger.info({
+                message: 'KIE reference images resolved',
+                details: { originalCount: referenceImages.length, resolvedCount: imageUrls.length },
+            })
         }
         if (aspectRatio) {
             input.aspect_ratio = aspectRatio
@@ -180,7 +265,12 @@ export class KieVideoGenerator extends BaseVideoGenerator {
 
         const input: Record<string, unknown> = {}
         if (prompt) input.prompt = prompt
-        if (imageUrl) input.image_urls = [imageUrl]
+        if (imageUrl) {
+            const resolvedUrls = await resolveImageUrls(apiKey, [imageUrl])
+            if (resolvedUrls.length > 0) {
+                input.image_urls = resolvedUrls
+            }
+        }
         if (typeof duration === 'number') input.duration = duration
 
         const { taskId } = await submitKieTask(apiKey, modelId, input)

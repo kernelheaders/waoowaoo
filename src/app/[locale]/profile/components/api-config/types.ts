@@ -236,21 +236,22 @@ export const PRESET_PROVIDERS: Omit<Provider, 'apiKey' | 'hasApiKey'>[] = [
     { id: 'fal', name: 'FAL' },
 ]
 
-const ZH_PROVIDER_NAME_MAP: Record<string, string> = {
-    ark: '火山引擎 Ark',
-    minimax: '海螺 MiniMax',
-    vidu: '生数科技 Vidu',
-    bailian: '阿里云百炼',
-    siliconflow: '硅基流动',
+const TR_PROVIDER_NAME_MAP: Record<string, string> = {
+    kie: 'KIE.ai',
+    ark: 'Volcengine Ark',
+    minimax: 'MiniMax Hailuo',
+    vidu: 'Vidu',
+    bailian: 'Alibaba Bailian',
+    siliconflow: 'SiliconFlow',
 }
 
-function isZhLocale(locale?: string): boolean {
-    return typeof locale === 'string' && locale.toLowerCase().startsWith('zh')
+function isTrLocale(locale?: string): boolean {
+    return typeof locale === 'string' && locale.toLowerCase().startsWith('tr')
 }
 
 export function resolvePresetProviderName(providerId: string, fallbackName: string, locale?: string): string {
-    if (!isZhLocale(locale)) return fallbackName
-    return ZH_PROVIDER_NAME_MAP[providerId] ?? fallbackName
+    if (!isTrLocale(locale)) return fallbackName
+    return TR_PROVIDER_NAME_MAP[providerId] ?? fallbackName
 }
 
 /**

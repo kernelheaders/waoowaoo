@@ -87,12 +87,12 @@ function parseDescriptions(raw: string[] | string | null | undefined): string[] 
 }
 
 export function getFilteredPropsDescription(props: PromptPropAsset[], clipProps: string[]): string {
-  if (clipProps.length === 0) return '无'
+  if (clipProps.length === 0) return 'None'
   const propNameSet = new Set(clipProps.map(normalizeName))
   const matched = props.filter((prop) => propNameSet.has(normalizeName(prop.name)))
-  if (matched.length === 0) return '无'
+  if (matched.length === 0) return 'None'
   return matched
-    .map((prop) => `【${prop.name}】${typeof prop.summary === 'string' && prop.summary.trim() ? prop.summary.trim() : '无描述'}`)
+    .map((prop) => `【${prop.name}】${typeof prop.summary === 'string' && prop.summary.trim() ? prop.summary.trim() : 'No description'}`)
     .join('\n')
 }
 
@@ -103,38 +103,38 @@ export function buildPromptAssetContext(input: PromptAssetContextInput): PromptA
     subjectNames.some((name) => characterNameMatches(character.name, name)),
   )
   const appearanceListText = subjectNames.length === 0
-    ? '无'
+    ? 'None'
     : matchedCharacters.map((character) => {
       const appearances = character.appearances ?? []
       if (appearances.length === 0) {
-        return `${character.name}: ["初始形象"]`
+        return `${character.name}: ["Default Appearance"]`
       }
-      const labels = appearances.map((appearance) => appearance.changeReason || '初始形象')
+      const labels = appearances.map((appearance) => appearance.changeReason || 'Default Appearance')
       return `${character.name}: [${labels.map((label) => `"${label}"`).join(', ')}]`
-    }).join('\n') || '无'
+    }).join('\n') || 'None'
 
   const fullDescriptionText = subjectNames.length === 0
-    ? '无'
+    ? 'None'
     : matchedCharacters.map((character) => {
       const appearances = character.appearances ?? []
       if (appearances.length === 0) {
-        return `【${character.name}】无形象描述`
+        return `【${character.name}】No appearance description`
       }
       return appearances.map((appearance) => {
-        const label = appearance.changeReason || '初始形象'
+        const label = appearance.changeReason || 'Default Appearance'
         const descriptions = parseDescriptions(appearance.descriptions)
         const selectedIndex = typeof appearance.selectedIndex === 'number' ? appearance.selectedIndex : 0
-        const description = descriptions[selectedIndex] || appearance.description || '无描述'
+        const description = descriptions[selectedIndex] || appearance.description || 'No description'
         return `【${character.name} - ${label}】${description}`
       }).join('\n')
-    }).join('\n') || '无'
+    }).join('\n') || 'None'
 
   const environmentName = input.clipLocation
   const matchedLocation = environmentName
     ? input.locations.find((location) => normalizeName(location.name) === normalizeName(environmentName))
     : null
   const selectedImage = matchedLocation?.images?.find((image) => image.isSelected) ?? matchedLocation?.images?.[0]
-  const locationDescriptionText = selectedImage?.description || '无'
+  const locationDescriptionText = selectedImage?.description || 'None'
 
   return {
     subjectNames,
@@ -142,7 +142,7 @@ export function buildPromptAssetContext(input: PromptAssetContextInput): PromptA
     propNames,
     appearanceListText,
     fullDescriptionText,
-    locationDescriptionText: environmentName ? locationDescriptionText : '无',
+    locationDescriptionText: environmentName ? locationDescriptionText : 'None',
     propsDescriptionText: getFilteredPropsDescription(input.props, propNames),
     charactersIntroductionText: buildCharactersIntroduction(input.characters),
   }

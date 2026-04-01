@@ -1,0 +1,176 @@
+{
+  "stages": {
+    "story": "Hikaye",
+    "script": "Senaryo",
+    "storyboard": "Storyboard",
+    "video": "Video",
+    "editor": "AI Editör",
+    "editorComingSoon": "Yakında, güncellemeler için bizi takip edin"
+  },
+  "buttons": {
+    "assetLibrary": "Varlık Kütüphanesi",
+    "settings": "Proje Yapılandırması",
+    "refreshData": "Verileri Yenile",
+    "enterVideoGeneration": "Video Oluşturmaya Geç →"
+  },
+  "smartImport": {
+    "title": "Yaratıcı Yolculuğunuza Başlayın",
+    "subtitle": "Önce oluşturma yönteminizi seçin",
+    "manualCreate": {
+      "title": "Bölüm 1'den Oluştur",
+      "description": "Bölüm 1'den başlayın, bölümlü oluşturma veya tekli kısa videolar için uygundur",
+      "button": "Oluşturmaya Başla"
+    },
+    "smartImport": {
+      "title": "Akıllı Tam Kitap İçe Aktarma",
+      "description": "Tam bir roman veya senaryo yükleyin, AI motoru otomatik olarak bölüm yapısını tanır ve bölümlere ayırır.",
+      "button": "Şimdi İçe Aktar",
+      "recommended": "Önerilen"
+    },
+    "upload": {
+      "title": "Ham Materyal Yükle",
+      "subtitle": "AI motoru hazır, otomatik bölüm ayırma ve biçimlendirme",
+      "maxWords": "(Maks. 30.000 kelime)",
+      "textInput": "Metin İçeriği Girin",
+      "documentUpload": "Tam Belge Yükle",
+      "placeholder": "Roman bölümlerinizi veya senaryo içeriğinizi buraya yapıştırın...",
+      "filePlaceholder": "Dosya yüklendi modu",
+      "clickUpload": "Belge yüklemek için tıklayın",
+      "clearTextFirst": "Lütfen önce soldaki metni temizleyin",
+      "supportedFormats": "Word, TXT formatlarını destekler",
+      "preview": "Önizleme",
+      "expandPreview": "Daha Fazla Göster",
+      "collapsePreview": "Daralt",
+      "deleteFile": "Dosyayı Sil",
+      "startAnalysis": "Akıllı Analizi Başlat",
+      "back": "Geri",
+      "words": "kelime"
+    },
+    "analyzing": {
+      "title": "AI Hikayenizi Analiz Ediyor",
+      "description": "Bölüm yapısı tanınıyor, akıllı ayırma devam ediyor...",
+      "autoSave": "Analiz tamamlandıktan sonra otomatik kaydedilecektir"
+    },
+    "preview": {
+      "title": "Akıllı Ayırma Tamamlandı",
+      "episodeCount": "Otomatik olarak {count} bölüme ayrıldı",
+      "totalWords": "Toplam {count} kelime",
+      "autoSaved": "✓ Otomatik kaydedildi",
+      "reanalyze": "Yeniden Analiz Et",
+      "confirm": "Tamamlamayı Onayla",
+      "saving": "Kaydediliyor...",
+      "episodeList": "Bölüm Listesi",
+      "addEpisode": "Bölüm Ekle",
+      "averageWords": "Bölüm başına ortalama",
+      "episodeContent": "Bölüm İçeriği",
+      "episodePlaceholder": "Bölüm başlığı girin...",
+      "summaryPlaceholder": "Olay örgüsü özeti girin...",
+      "newEpisode": "Yeni Bölüm",
+      "deleteEpisode": "Bölümü Sil",
+      "deleteConfirm": {
+        "title": "Silmeyi Onayla",
+        "message": "\"{title}\" silinsin mi?",
+        "cancel": "İptal",
+        "confirm": "Silmeyi Onayla"
+      },
+      "tip": {
+        "title": "İpucu",
+        "content": "Başlıkları, özetleri ve içeriği doğrudan düzenleyebilirsiniz. [Tamamlamayı Onayla] düğmesine tıkladıktan sonra bölümler projeye resmi olarak aktarılacaktır"
+      }
+    },
+    "errors": {
+      "fileTooLarge": "Dosya çok büyük, lütfen 10MB'den küçük bir dosya yükleyin",
+      "docNotSupported": ".doc formatı desteklenmiyor, lütfen Word'de .docx'e dönüştürün",
+      "fileEmpty": "Dosya içeriği boş",
+      "fileReadError": "Dosya okuma başarısız, lütfen tekrar deneyin",
+      "uploadFirst": "Lütfen önce yükleyin veya içerik yapıştırın",
+      "analyzeFailed": "Analiz başarısız",
+      "saveFailed": "Kaydetme başarısız"
+    },
+    "cancelConfirm": "İptal etmek istediğinizden emin misiniz? Analiz edilen bölümler silinecektir."
+  },
+  "storyInput": {
+    "currentEditing": "Şu anda düzenleniyor: {name}",
+    "editingTip": "Aşağıdaki iş akışı yalnızca bu bölüm içindir. Gerekirse sol üstten bölüm değiştirin",
+    "wordCount": "Kelime sayısı:",
+    "assetLibraryTip": {
+      "title": "Özel karakterlere ve mekanlara mı ihtiyacınız var?",
+      "description": "Sağ üstteki 「Varlık Kütüphanesi」 düğmesine tıklayarak varlık ayar belgelerini yükleyin veya karakter/mekan ekleyin. AI, analiz için varlık kütüphanesindeki ayarları öncelikli kullanacaktır."
+    },
+    "videoRatio": "Video Oranı",
+    "videoRatioHint": "Hedef platformunuza ve içerik formatınıza uygun bir oran seçin",
+    "ratioUsage": {
+      "1_1": "1:1: Kare çerçeve, avatarlar, kapaklar ve genel sosyal medya gönderileri için uygundur",
+      "9_16": "9:16: Dikey video, TikTok, Reels, Shorts ve diğer kısa video akışları için ideal",
+      "16_9": "16:9: Yatay video, YouTube, Bilibili ve masaüstü oynatma için ideal",
+      "4_3": "4:3: Klasik TV oranı, eski görüntüler veya güvenli kırpma için kullanışlıdır",
+      "3_4": "3:4: Hafif dikey, metin + video karışık düzenler için uygundur",
+      "2_3": "2:3: Daha dikey, posterler ve karakter anahtar görselleri için uygundur",
+      "3_2": "3:2: Hafif yatay, manzaralar ve hikaye sahneleri için uygundur",
+      "4_5": "4:5: Dikey poster oranı, sosyal medya akış görselleri için yaygındır",
+      "5_4": "5:4: Yatay poster oranı, PC web afişleri için uygundur",
+      "21_9": "21:9: Ultra geniş sinematik çerçeve, film benzeri çekimler ve panoramalar için ideal"
+    },
+    "ratioUsageTag": {
+      "1_1": "Kare · Avatarlar/Kapaklar",
+      "9_16": "Dikey · Kısa video",
+      "16_9": "Yatay · Uzun video",
+      "4_3": "Yatay · Klasik TV",
+      "3_4": "Dikey · Metin + video",
+      "2_3": "Dikey · Posterler/Anahtar görsel",
+      "3_2": "Yatay · Manzara/Hikaye",
+      "4_5": "Dikey · Akış görseli",
+      "5_4": "Yatay · Afiş",
+      "21_9": "Ultra geniş · Sinema hissi"
+    },
+    "visualStyle": "Sanat Stili",
+    "visualStyleHint": "Projenize uygun bir sanat stili seçin — ör. canlı çekim için Gerçekçi, 2D içerik için Anime",
+    "currentConfigSummary": "Mevcut yapılandırma: {ratio} · {style}. Sonraki tüm oluşturmalar bu kombinasyonu kullanacaktır.",
+    "assetLibraryRatioNote": "Varlık kütüphanesi oranları etkilenmez",
+    "moreConfig": "Daha fazla yapılandırma seçeneği için sağ üstteki 「Ayarlar」 düğmesine tıklayın",
+    "narration": {
+      "title": "Anlatım Seslendirmesini Etkinleştir",
+      "description": "Videonuza yorum eklemek için TTS sesli anlatım oluşturun"
+    },
+    "creating": "AI Oluşturuyor...",
+    "ready": "✓ Yapılandırma tamamlandı, sonraki adıma hazır",
+    "pleaseInput": "Lütfen önce senaryo içeriği girin",
+    "longTextDetection": {
+      "title": "Akıllı Bölüm Ayırma Önerilir",
+      "description": "Yaklaşık {count} karakter tespit edildi. Uzun metni tek bir bölüm olarak işlemek çıktı kalitesini düşürebilir.",
+      "strongRecommend": "Akıllı Ayırma kullanmanızı şiddetle tavsiye ederiz. AI otomatik olarak bölümleri tanıyacak, bölümlere ayıracak ve önemli ölçüde daha iyi sonuçlar için paralel olarak işleyecektir.",
+      "continueAnyway": "Tek bölüm olarak devam et",
+      "smartSplit": "Akıllı Ayırma",
+      "smartSplitRecommend": "Önerilen",
+      "singleEpisodeWarning": "Tüm içerik tek bir bölüm olarak işlenecektir"
+    }
+  },
+  "execution": {
+    "selectEpisode": "Lütfen önce bir bölüm seçin",
+    "fillContentFirst": "Lütfen önce içerik girin",
+    "requestAborted": "İstek iptal edildi (muhtemelen sayfa yenilenmesinden kaynaklanıyor)",
+    "analysisFailed": "Varlık analizi başarısız",
+    "prepareFailed": "Hazırlık başarısız",
+    "generationFailed": "Oluşturma başarısız",
+    "batchVideoFailed": "Toplu video oluşturma başarısız",
+    "updateFailed": "Güncelleme başarısız",
+    "saveFailed": "Kaydetme başarısız",
+    "storyToScriptRunning": "Hikaye→Senaryo V2 çalışıyor",
+    "scriptToStoryboardRunning": "Senaryo→Storyboard V2 çalışıyor",
+    "storyToScriptFailed": "Hikayeden senaryoya dönüştürme başarısız",
+    "scriptToStoryboardFailed": "Senaryodan storyboard'a dönüştürme başarısız",
+    "taskStreamTimeout": "Görev zaman aşımına uğradı. Görev arka planda hâlâ çalışıyor olabilir — lütfen durumunu kontrol edin veya tekrar deneyin"
+  },
+  "rebuildConfirm": {
+    "storyToScript": {
+      "title": "Senaryo Akışı Yeniden İnşa Edilecek",
+      "message": "Bu bölüm için alt akış storyboard verileri tespit edildi ({storyboardCount} storyboard, {panelCount} panel). Devam etmek bu verileri temizleyip yeniden oluşturacaktır. Devam edilsin mi?"
+    },
+    "scriptToStoryboard": {
+      "title": "Storyboard Verileri Yeniden İnşa Edilecek",
+      "message": "Bu bölüm için mevcut storyboard verileri tespit edildi ({storyboardCount} storyboard, {panelCount} panel). Devam etmek mevcut storyboard'ları temizleyip yeniden oluşturacaktır. Devam edilsin mi?"
+    },
+    "confirm": "Devam Et ve Temizle",
+    "cancel": "İptal"
+  }
+}

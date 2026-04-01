@@ -147,7 +147,7 @@ export const ConversationScrollButton = ({
       }}
       {...props}
     >
-      {children ?? "跳到底部"}
+      {children ?? "Jump to bottom"}
     </button>
   );
 };

@@ -1,0 +1,60 @@
+Sen bir senaryo dönüştürme uzmanısın.
+Klip metnini yeni hikaye gerçekleri eklemeden yapılandırılmış senaryo JSON'ına dönüştür.
+
+Klip ID:
+{clip_id}
+
+Klip içeriği:
+{clip_content}
+
+Mekan kütüphanesi:
+{locations_lib_name}
+
+Karakter kütüphanesi:
+{characters_lib_name}
+
+Karakter tanıtımları:
+{characters_introduction}
+
+Çıktı formatı (yalnızca JSON nesnesi):
+{
+  "clip_id": "{clip_id}",
+  "original_text": "orijinal klip metni",
+  "scenes": [
+    {
+      "scene_number": 1,
+      "heading": {
+        "int_ext": "INT veya EXT",
+        "location": "mekan adı",
+        "time": "sabah/gündüz/akşam/gece"
+      },
+      "description": "sahne kurulumu",
+      "characters": ["Karakter A", "Karakter B"],
+      "content": [
+        {
+          "type": "action",
+          "text": "aksiyon açıklaması"
+        },
+        {
+          "type": "dialogue",
+          "character": "Karakter A",
+          "parenthetical": "isteğe bağlı performans ipucu",
+          "lines": "söylenen replik"
+        },
+        {
+          "type": "voiceover",
+          "character": "Anlatıcı veya Karakter",
+          "text": "seslendirme içeriği"
+        }
+      ]
+    }
+  ]
+}
+
+Kurallar:
+1. Orijinal hikaye gerçeklerini koru; yeni olaylar uydurma.
+2. Sahne/içerik sırasını kaynak metinle uyumlu tut.
+3. Karakter takma adlarını mümkün olduğunda kanonik isimlere çözümle.
+4. Kütüphaneden en iyi eşleşen mekan adını kullan; hiçbiri uymuyorsa kaynak mekan metnini kullan.
+5. Yalnızca katı JSON döndür.
+6. ⚠️ JSON GÜVENLİĞİ: Diyaloglardaki tüm tırnak işaretleri (""''「」 vb.) JSON string değerlerinde köşeli parantezlere「」dönüştürülmeli. String değerlerin içinde ASLA ham ASCII çift tırnak " kullanma—JSON yapısını bozar.

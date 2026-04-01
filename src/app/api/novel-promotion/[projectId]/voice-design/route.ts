@@ -29,7 +29,7 @@ export const POST = apiHandler(async (
   const preferredName = typeof body.preferredName === 'string' && body.preferredName.trim()
     ? body.preferredName.trim()
     : 'custom_voice'
-  const language = body.language === 'en' ? 'en' : 'zh'
+  const language = body.language === 'en' ? 'en' : 'tr'
 
   const promptValidation = validateVoicePrompt(voicePrompt)
   if (!promptValidation.valid) {

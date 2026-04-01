@@ -115,7 +115,7 @@ export function ModelInnovativeV6(props: ModelDropdownTestProps) {
                 className={`flex-1 flex items-center justify-between px-4 py-3 transition-colors rounded-l-xl hover:bg-black/5 dark:hover:bg-white/5 ${modelOpen ? 'bg-black/5 dark:bg-white/5' : ''}`}
             >
                 <div className="flex flex-col items-start min-w-0 pr-2">
-                    <span className="text-[11px] font-bold text-[var(--glass-text-tertiary)] uppercase tracking-wider mb-0.5">模型 Model</span>
+                    <span className="text-[11px] font-bold text-[var(--glass-text-tertiary)] uppercase tracking-wider mb-0.5">Model</span>
                     <span className="text-[14px] font-semibold text-[var(--glass-text-primary)] truncate">
                         {activeModel ? activeModel.label : props.placeholder}
                     </span>
@@ -134,9 +134,9 @@ export function ModelInnovativeV6(props: ModelDropdownTestProps) {
                 disabled={props.capabilityFields.length === 0}
             >
                 <div className="flex flex-col items-start min-w-0 pr-2">
-                    <span className="text-[11px] font-bold text-[var(--glass-text-tertiary)] uppercase tracking-wider mb-0.5">参数 Params</span>
+                    <span className="text-[11px] font-bold text-[var(--glass-text-tertiary)] uppercase tracking-wider mb-0.5">Parameters</span>
                     <span className={`text-[14px] font-semibold truncate ${props.capabilityFields.length === 0 ? 'text-[var(--glass-text-tertiary)]' : 'text-blue-500'}`}>
-                        {props.capabilityFields.length === 0 ? '不可配置' : (summary || '配置')}
+                        {props.capabilityFields.length === 0 ? 'Not configurable' : (summary || 'Configure')}
                     </span>
                 </div>
                 <AppIcon name="chevronDown" className="w-4 h-4 text-[var(--glass-text-tertiary)] shrink-0" />
@@ -208,10 +208,10 @@ export function ModelInnovativeV7(props: ModelDropdownTestProps) {
                     </div>
                     <div className="text-left flex flex-col">
                         <span className="text-[15px] font-bold text-[var(--glass-text-primary)]">
-                            {activeModel ? activeModel.label : '未选择模型'}
+                            {activeModel ? activeModel.label : 'No model selected'}
                         </span>
                         <span className="text-[12px] text-[var(--glass-text-tertiary)] mt-0.5">
-                            展开以修改模型或参数设置
+                            Expand to modify model or parameter settings
                         </span>
                     </div>
                 </div>
@@ -222,7 +222,7 @@ export function ModelInnovativeV7(props: ModelDropdownTestProps) {
 
             <div className={`transition-all duration-300 ease-in-out ${isExpanded ? 'max-h-[800px] opacity-100' : 'max-h-0 opacity-0'} overflow-hidden`}>
                 <div className="p-4 pt-0 border-t border-[var(--glass-stroke-base)] mt-2 mx-4">
-                    <div className="mt-4 mb-2 text-[12px] font-bold uppercase tracking-wider text-[var(--glass-text-secondary)]">1. 选择模型</div>
+                    <div className="mt-4 mb-2 text-[12px] font-bold uppercase tracking-wider text-[var(--glass-text-secondary)]">1. Select Model</div>
                     <div className="grid grid-cols-2 gap-2 mb-6">
                         {props.models.map(m => {
                             const active = m.value === props.value
@@ -241,7 +241,7 @@ export function ModelInnovativeV7(props: ModelDropdownTestProps) {
 
                     {props.capabilityFields.length > 0 && (
                         <>
-                            <div className="mb-2 text-[12px] font-bold uppercase tracking-wider text-[var(--glass-text-secondary)]">2. 参数微调</div>
+                            <div className="mb-2 text-[12px] font-bold uppercase tracking-wider text-[var(--glass-text-secondary)]">2. Fine-tune Parameters</div>
                             <div className="space-y-4 bg-[var(--glass-bg-base)] p-4 rounded-xl border border-[var(--glass-stroke-subtle)]">
                                 {props.capabilityFields.map(field => {
                                     const val = props.capabilityOverrides[field.field] !== undefined ? String(props.capabilityOverrides[field.field]) : String(field.options[0] || '')
@@ -292,11 +292,11 @@ export function ModelInnovativeV8(props: ModelDropdownTestProps) {
                 <div className="flex items-center gap-3">
                     <AppIcon name="settingsHex" className="w-5 h-5 text-[var(--glass-text-secondary)]" />
                     <span className="text-[15px] font-medium text-[var(--glass-text-primary)]">
-                        {activeModel ? activeModel.label : '配置模型...'}
+                        {activeModel ? activeModel.label : 'Configure model...'}
                     </span>
                 </div>
                 <div className="text-[12px] font-bold text-blue-500 bg-blue-500/10 px-3 py-1 rounded-full uppercase tracking-widest">
-                    编辑
+                    Edit
                 </div>
             </button>
 
@@ -307,8 +307,8 @@ export function ModelInnovativeV8(props: ModelDropdownTestProps) {
                         {/* Left: Models List */}
                         <div className="w-1/2 flex flex-col border-r border-[var(--glass-stroke-subtle)] bg-[var(--glass-bg-surface)]">
                             <div className="p-5 border-b border-[var(--glass-stroke-subtle)] flex items-center justify-between">
-                                <h2 className="text-[18px] font-bold text-[var(--glass-text-primary)]">模型库</h2>
-                                <span className="text-[12px] text-[var(--glass-text-tertiary)]">包含 {props.models.length} 项</span>
+                                <h2 className="text-[18px] font-bold text-[var(--glass-text-primary)]">Model Library</h2>
+                                <span className="text-[12px] text-[var(--glass-text-tertiary)]">Contains {props.models.length} items</span>
                             </div>
                             <div className="flex-1 overflow-y-auto p-3 space-y-2">
                                 {props.models.map(m => {
@@ -329,7 +329,7 @@ export function ModelInnovativeV8(props: ModelDropdownTestProps) {
                         {/* Right: Params Configuration */}
                         <div className="w-1/2 flex flex-col bg-[var(--glass-bg-base)]">
                             <div className="p-5 border-b border-[var(--glass-stroke-subtle)] flex items-center justify-between">
-                                <h2 className="text-[18px] font-bold text-[var(--glass-text-primary)]">参数设置</h2>
+                                <h2 className="text-[18px] font-bold text-[var(--glass-text-primary)]">Parameter Settings</h2>
                                 <button onClick={() => setIsOpen(false)} className="p-1 rounded-full hover:bg-[var(--glass-bg-hover)]">
                                     <AppIcon name="close" className="w-5 h-5 text-[var(--glass-text-secondary)]" />
                                 </button>
@@ -338,7 +338,7 @@ export function ModelInnovativeV8(props: ModelDropdownTestProps) {
                                 {props.capabilityFields.length === 0 ? (
                                     <div className="flex flex-col items-center justify-center h-full text-center text-[var(--glass-text-tertiary)] gap-4 opacity-70">
                                         <AppIcon name="info" className="w-10 h-10" />
-                                        <p>当前模型无可用参数</p>
+                                        <p>No parameters available for current model</p>
                                     </div>
                                 ) : (
                                     props.capabilityFields.map(field => {
@@ -368,7 +368,7 @@ export function ModelInnovativeV8(props: ModelDropdownTestProps) {
                             </div>
                             <div className="p-4 border-t border-[var(--glass-stroke-subtle)] bg-[var(--glass-bg-surface-strong)] flex justify-end">
                                 <button onClick={() => setIsOpen(false)} className="px-6 py-2.5 rounded-lg bg-blue-600 text-white font-semibold hover:bg-blue-500 shadow-md">
-                                    确认应用
+                                    Apply
                                 </button>
                             </div>
                         </div>
@@ -406,8 +406,8 @@ export function ModelInnovativeV9(props: ModelDropdownTestProps) {
                         <AppIcon name="sparkles" className="w-4 h-4 text-[#ff6b6b]" />
                     </div>
                     <div className="flex flex-col text-left">
-                        <span className="text-[13px] font-semibold text-[var(--glass-text-primary)]">{activeModel ? activeModel.label : '未选择'}</span>
-                        <span className="text-[11px] text-[var(--glass-text-tertiary)]">{props.capabilityFields.length} 项参数配置可设</span>
+                        <span className="text-[13px] font-semibold text-[var(--glass-text-primary)]">{activeModel ? activeModel.label : 'Not selected'}</span>
+                        <span className="text-[11px] text-[var(--glass-text-tertiary)]">{props.capabilityFields.length}  parameters configurable</span>
                     </div>
                 </div>
                 <AppIcon name="chevronDown" className="w-4 h-4 mr-1 text-[var(--glass-text-tertiary)] transition-transform group-hover:text-[var(--glass-text-primary)]" />
@@ -418,7 +418,7 @@ export function ModelInnovativeV9(props: ModelDropdownTestProps) {
                     <div className={`flex w-[200%] transition-transform duration-300 ease-[cubic-bezier(0.32,0.72,0,1)] ${view === 'params' ? '-translate-x-1/2' : 'translate-x-0'}`}>
                         {/* Page 1: Models */}
                         <div className="w-1/2 flex flex-col max-h-[300px]">
-                            <div className="p-3 border-b border-[var(--glass-stroke-subtle)] bg-[var(--glass-bg-surface)] font-bold text-[13px] text-center">选择主要模型</div>
+                            <div className="p-3 border-b border-[var(--glass-stroke-subtle)] bg-[var(--glass-bg-surface)] font-bold text-[13px] text-center">Select primary model</div>
                             <div className="overflow-y-auto flex-1 p-2 space-y-1">
                                 {props.models.map(m => {
                                     const active = m.value === props.value
@@ -435,7 +435,7 @@ export function ModelInnovativeV9(props: ModelDropdownTestProps) {
                                                 <button
                                                     onClick={() => setView('params')}
                                                     className="px-2 py-2 w-[40px] flex items-center justify-center rounded-lg bg-[var(--glass-bg-surface-strong)] hover:bg-[var(--glass-bg-hover)] border border-[var(--glass-stroke-subtle)] text-[var(--glass-text-secondary)] shadow-sm"
-                                                    title="配置参数"
+                                                    title="Configure parameters"
                                                 >
                                                     <AppIcon name="settingsHex" className="w-4 h-4" />
                                                 </button>
@@ -450,9 +450,9 @@ export function ModelInnovativeV9(props: ModelDropdownTestProps) {
                             <div className="p-2 border-b border-[var(--glass-stroke-subtle)] bg-[var(--glass-bg-surface)] flex items-center">
                                 <button onClick={() => setView('models')} className="p-1 px-2 shrink-0 flex items-center gap-1 hover:bg-[var(--glass-bg-hover)] rounded font-medium text-[12px] text-[var(--glass-text-secondary)]">
                                     <AppIcon name="chevronDown" className="w-4 h-4 rotate-90" />
-                                    返回
+                                    Back
                                 </button>
-                                <div className="font-bold text-[13px] text-center flex-1 mr-8">参数配置</div>
+                                <div className="font-bold text-[13px] text-center flex-1 mr-8">Parameter Config</div>
                             </div>
                             <div className="overflow-y-auto flex-1 p-4 space-y-5">
                                 {props.capabilityFields.map(field => {
@@ -502,7 +502,7 @@ export function ModelInnovativeV10(props: ModelDropdownTestProps) {
                 className="w-full flex items-center justify-center gap-3 py-3 px-4 rounded-full bg-[var(--glass-bg-base)] border border-[var(--glass-text-primary)] hover:bg-[var(--glass-text-primary)] hover:text-[var(--glass-bg-base)] group transition-all text-[var(--glass-text-primary)] font-bold shadow-[0_4px_14px_rgba(0,0,0,0.1)]"
             >
                 <AppIcon name="cpu" className="w-5 h-5 group-hover:animate-pulse" />
-                <span>生成偏好: {activeModel ? activeModel.label : '点击选择'}</span>
+                <span>Generation preference: {activeModel ? activeModel.label : 'Click to select'}</span>
             </button>
 
             {isOpen && createPortal(
@@ -515,7 +515,7 @@ export function ModelInnovativeV10(props: ModelDropdownTestProps) {
                         <div className="w-12 h-1.5 bg-[var(--glass-stroke-active)] rounded-full mx-auto mb-6" />
 
                         <div className="flex justify-between items-center mb-6 px-2">
-                            <h2 className="text-[24px] font-black text-[var(--glass-text-primary)] tracking-tight">配置生成偏好</h2>
+                            <h2 className="text-[24px] font-black text-[var(--glass-text-primary)] tracking-tight">Configure generation preferences</h2>
                             <button onClick={() => setIsOpen(false)} className="w-10 h-10 rounded-full bg-[var(--glass-bg-surface-strong)] flex items-center justify-center hover:bg-[var(--glass-bg-hover)]">
                                 <AppIcon name="close" className="w-5 h-5" />
                             </button>
@@ -524,7 +524,7 @@ export function ModelInnovativeV10(props: ModelDropdownTestProps) {
                         <div className="flex flex-col md:flex-row gap-8 px-2">
                             {/* Left: Models horizontally scrollable block */}
                             <div className="w-full md:w-2/3">
-                                <h3 className="text-[14px] font-bold text-[var(--glass-text-secondary)] uppercase tracking-wider mb-4">核心模型选择</h3>
+                                <h3 className="text-[14px] font-bold text-[var(--glass-text-secondary)] uppercase tracking-wider mb-4">Core model selection</h3>
                                 <div className="grid grid-cols-2 lg:grid-cols-3 gap-3">
                                     {props.models.map(m => {
                                         const active = m.value === props.value
@@ -547,9 +547,9 @@ export function ModelInnovativeV10(props: ModelDropdownTestProps) {
 
                             {/* Right: Vertical params list */}
                             <div className="w-full md:w-1/3 flex flex-col pt-2 md:pt-0 border-t md:border-t-0 md:border-l border-[var(--glass-stroke-subtle)] md:pl-8">
-                                <h3 className="text-[14px] font-bold text-[var(--glass-text-secondary)] uppercase tracking-wider mb-4">参数微调</h3>
+                                <h3 className="text-[14px] font-bold text-[var(--glass-text-secondary)] uppercase tracking-wider mb-4">Fine-tune Parameters</h3>
                                 {props.capabilityFields.length === 0 ? (
-                                    <div className="text-[var(--glass-text-tertiary)] text-[14px]">自动最佳配置应用中</div>
+                                    <div className="text-[var(--glass-text-tertiary)] text-[14px]">Auto-applying optimal configuration</div>
                                 ) : (
                                     <div className="space-y-6">
                                         {props.capabilityFields.map(field => {

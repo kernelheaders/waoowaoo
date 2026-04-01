@@ -1,0 +1,18 @@
+{
+  "storyboard": "Storyboard",
+  "storyboard_candidate": "Storyboard Adayı",
+  "character": "Karakter",
+  "location": "Mekan",
+  "video": "Video",
+  "analyze": "Analiz Et",
+  "analyze_character": "Karakter Analizi",
+  "analyze_location": "Mekan Analizi",
+  "clips": "Klip Bölme",
+  "storyboard_text_plan": "Storyboard Planlama",
+  "storyboard_text_detail": "Storyboard Detayları",
+  "tts": "Metinden Sese",
+  "regenerate": "Yeniden Oluştur",
+  "voice-generate": "Ses Oluşturma",
+  "voice-design": "Ses Tasarımı",
+  "lip-sync": "Dudak Senkronu"
+}

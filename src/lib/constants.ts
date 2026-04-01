@@ -48,7 +48,7 @@ export const IMAGE_MODEL_OPTIONS = [
   { value: 'banana', label: 'Banana Pro (FAL)' },
   { value: 'banana-2', label: 'Banana 2 (FAL)' },
   { value: 'gemini-3-pro-image-preview', label: 'Banana (Google)' },
-  { value: 'gemini-3-pro-image-preview-batch', label: 'Banana (Google Batch) 省50%' },
+  { value: 'gemini-3-pro-image-preview-batch', label: 'Banana (Google Batch) %50 Tasarruf' },
   { value: 'doubao-seedream-4-0-250828', label: 'Seedream 4.0' },
   { value: 'doubao-seedream-4-5-251128', label: 'Seedream 4.5' },
   { value: 'imagen-4.0-generate-001', label: 'Imagen 4.0 (Google)' },
@@ -58,8 +58,8 @@ export const IMAGE_MODEL_OPTIONS = [
 
 // Banana 模型分辨率选项（仅用于九宫格分镜图，单张生成固定2K）
 export const BANANA_RESOLUTION_OPTIONS = [
-  { value: '2K', label: '2K (推荐，快速)' },
-  { value: '4K', label: '4K (高清，较慢)' }
+  { value: '2K', label: '2K (Önerilen, Hızlı)' },
+  { value: '4K', label: '4K (Yüksek Kalite, Yavaş)' }
 ]
 
 // 支持分辨率选择的 Banana 模型
@@ -67,13 +67,13 @@ export const BANANA_MODELS = ['banana', 'banana-2', 'gemini-3-pro-image-preview'
 
 export const VIDEO_MODELS = [
   { value: 'doubao-seedance-1-0-pro-fast-251015', label: 'Seedance 1.0 Pro Fast' },
-  { value: 'doubao-seedance-1-0-pro-fast-251015-batch', label: 'Seedance 1.0 Pro Fast (批量) 省50%' },
+  { value: 'doubao-seedance-1-0-pro-fast-251015-batch', label: 'Seedance 1.0 Pro Fast (Toplu) %50 Tasarruf' },
   { value: 'doubao-seedance-1-0-lite-i2v-250428', label: 'Seedance 1.0 Lite' },
-  { value: 'doubao-seedance-1-0-lite-i2v-250428-batch', label: 'Seedance 1.0 Lite (批量) 省50%' },
+  { value: 'doubao-seedance-1-0-lite-i2v-250428-batch', label: 'Seedance 1.0 Lite (Toplu) %50 Tasarruf' },
   { value: 'doubao-seedance-1-5-pro-251215', label: 'Seedance 1.5 Pro' },
-  { value: 'doubao-seedance-1-5-pro-251215-batch', label: 'Seedance 1.5 Pro (批量) 省50%' },
+  { value: 'doubao-seedance-1-5-pro-251215-batch', label: 'Seedance 1.5 Pro (Toplu) %50 Tasarruf' },
   { value: 'doubao-seedance-1-0-pro-250528', label: 'Seedance 1.0 Pro' },
-  { value: 'doubao-seedance-1-0-pro-250528-batch', label: 'Seedance 1.0 Pro (批量) 省50%' },
+  { value: 'doubao-seedance-1-0-pro-250528-batch', label: 'Seedance 1.0 Pro (Toplu) %50 Tasarruf' },
   { value: 'fal-wan25', label: 'Wan 2.6' },
   { value: 'fal-veo31', label: 'Veo 3.1 Fast' },
   { value: 'fal-sora2', label: 'Sora 2' },
@@ -95,14 +95,14 @@ export const AUDIO_SUPPORTED_MODELS = ['doubao-seedance-1-5-pro-251215', 'doubao
 
 // 首尾帧视频模型（能力权威来源是 standards/capabilities；此常量仅作静态兜底展示）
 export const FIRST_LAST_FRAME_MODELS = [
-  { value: 'doubao-seedance-1-5-pro-251215', label: 'Seedance 1.5 Pro (首尾帧)' },
-  { value: 'doubao-seedance-1-5-pro-251215-batch', label: 'Seedance 1.5 Pro (首尾帧/批量) 省50%' },
-  { value: 'doubao-seedance-1-0-pro-250528', label: 'Seedance 1.0 Pro (首尾帧)' },
-  { value: 'doubao-seedance-1-0-pro-250528-batch', label: 'Seedance 1.0 Pro (首尾帧/批量) 省50%' },
-  { value: 'doubao-seedance-1-0-lite-i2v-250428', label: 'Seedance 1.0 Lite (首尾帧)' },
-  { value: 'doubao-seedance-1-0-lite-i2v-250428-batch', label: 'Seedance 1.0 Lite (首尾帧/批量) 省50%' },
-  { value: 'veo-3.1-generate-preview', label: 'Veo 3.1 (首尾帧)' },
-  { value: 'veo-3.1-fast-generate-preview', label: 'Veo 3.1 Fast (首尾帧)' }
+  { value: 'doubao-seedance-1-5-pro-251215', label: 'Seedance 1.5 Pro (İlk-Son Kare)' },
+  { value: 'doubao-seedance-1-5-pro-251215-batch', label: 'Seedance 1.5 Pro (首尾帧/批量) %50 Tasarruf' },
+  { value: 'doubao-seedance-1-0-pro-250528', label: 'Seedance 1.0 Pro (İlk-Son Kare)' },
+  { value: 'doubao-seedance-1-0-pro-250528-batch', label: 'Seedance 1.0 Pro (首尾帧/批量) %50 Tasarruf' },
+  { value: 'doubao-seedance-1-0-lite-i2v-250428', label: 'Seedance 1.0 Lite (İlk-Son Kare)' },
+  { value: 'doubao-seedance-1-0-lite-i2v-250428-batch', label: 'Seedance 1.0 Lite (首尾帧/批量) %50 Tasarruf' },
+  { value: 'veo-3.1-generate-preview', label: 'Veo 3.1 (İlk-Son Kare)' },
+  { value: 'veo-3.1-fast-generate-preview', label: 'Veo 3.1 Fast (İlk-Son Kare)' }
 ]
 
 export const VIDEO_RESOLUTIONS = [
@@ -111,46 +111,46 @@ export const VIDEO_RESOLUTIONS = [
 ]
 
 export const TTS_RATES = [
-  { value: '+0%', label: '正常速度 (1.0x)' },
-  { value: '+20%', label: '轻微加速 (1.2x)' },
-  { value: '+50%', label: '加速 (1.5x)' },
-  { value: '+100%', label: '快速 (2.0x)' }
+  { value: '+0%', label: 'Normal (1.0x)' },
+  { value: '+20%', label: 'Hafif Hızlı (1.2x)' },
+  { value: '+50%', label: 'Hızlı (1.5x)' },
+  { value: '+100%', label: 'Çok Hızlı (2.0x)' }
 ]
 
 export const TTS_VOICES = [
-  { value: 'zh-CN-YunxiNeural', label: '云希 (男声)', preview: '男' },
-  { value: 'zh-CN-XiaoxiaoNeural', label: '晓晓 (女声)', preview: '女' },
-  { value: 'zh-CN-YunyangNeural', label: '云扬 (男声)', preview: '男' },
-  { value: 'zh-CN-XiaoyiNeural', label: '晓伊 (女声)', preview: '女' }
+  { value: 'tr-TR-AhmetNeural', label: 'Ahmet (Erkek)', preview: 'E' },
+  { value: 'tr-TR-EmelNeural', label: 'Emel (Kadın)', preview: 'K' },
+  { value: 'en-US-GuyNeural', label: 'Guy (Erkek EN)', preview: 'E' },
+  { value: 'en-US-JennyNeural', label: 'Jenny (Kadın EN)', preview: 'K' },
 ]
 
 export const ART_STYLES = [
   {
     value: 'american-comic',
-    label: '漫画风',
-    preview: '漫',
-    promptZh: '日式动漫风格',
+    label: 'Anime',
+    preview: 'A',
+    promptTr: 'Japon anime tarzı',
     promptEn: 'Japanese anime style'
   },
   {
     value: 'chinese-comic',
-    label: '精致国漫',
-    preview: '国',
-    promptZh: '现代高质量漫画风格，动漫风格，细节丰富精致，线条锐利干净，质感饱满，超清，干净的画面风格，2D风格，动漫风格。',
-    promptEn: 'Modern premium Chinese comic style, rich details, clean sharp line art, full texture, ultra-clear 2D anime aesthetics.'
+    label: 'Premium Çizgi Roman',
+    preview: 'P',
+    promptTr: 'Modern yüksek kaliteli çizgi roman tarzı, zengin detaylar, keskin çizgiler, dolu doku, ultra net 2D anime estetiği.',
+    promptEn: 'Modern premium comic style, rich details, clean sharp line art, full texture, ultra-clear 2D anime aesthetics.'
   },
   {
     value: 'japanese-anime',
-    label: '日系动漫风',
-    preview: '日',
-    promptZh: '现代日系动漫风格，赛璐璐上色，清晰干净的线条，视觉小说CG感。高质量2D风格',
+    label: 'Japon Anime',
+    preview: 'J',
+    promptTr: 'Modern Japon anime tarzı, cel shading, temiz çizgi sanatı, görsel roman CG görünümü, yüksek kaliteli 2D tarz.',
     promptEn: 'Modern Japanese anime style, cel shading, clean line art, visual-novel CG look, high-quality 2D style.'
   },
   {
     value: 'realistic',
-    label: '真人风格',
-    preview: '实',
-    promptZh: '真实电影级画面质感，真实现实场景，色彩饱满通透，画面干净精致，真实感',
+    label: 'Gerçekçi',
+    preview: 'G',
+    promptTr: 'Gerçekçi sinematik görünüm, gerçek dünya sahne sadakati, zengin ve canlı renkler, temiz ve rafine görüntü kalitesi.',
     promptEn: 'Realistic cinematic look, real-world scene fidelity, rich transparent colors, clean and refined image quality.'
   }
 ]
@@ -170,16 +170,16 @@ export function isArtStyleValue(value: unknown): value is ArtStyleValue {
  */
 export function getArtStylePrompt(
   artStyle: string | null | undefined,
-  locale: 'zh' | 'en',
+  locale: 'tr' | 'en',
 ): string {
   if (!artStyle) return ''
   const style = ART_STYLES.find(s => s.value === artStyle)
   if (!style) return ''
-  return locale === 'en' ? style.promptEn : style.promptZh
+  return locale === 'en' ? style.promptEn : style.promptTr
 }
 
 // 角色形象生成的系统后缀（始终添加到提示词末尾，不显示给用户）- 左侧面部特写+右侧三视图
-export const CHARACTER_PROMPT_SUFFIX = '角色设定图，画面分为左右两个区域：【左侧区域】占约1/3宽度，是角色的正面特写（如果是人类则展示完整正脸，如果是动物/生物则展示最具辨识度的正面形态）；【右侧区域】占约2/3宽度，是角色三视图横向排列（从左到右依次为：正面全身、侧面全身、背面全身），三视图高度一致。纯白色背景，无其他元素。'
+export const CHARACTER_PROMPT_SUFFIX = 'Character reference sheet, image divided into left and right areas: [Left area] approximately 1/3 width, front close-up of the character (full face for humans, most recognizable front view for animals/creatures); [Right area] approximately 2/3 width, three-view orthographic arranged horizontally (left to right: front full body, side full body, back full body), all views same height. Pure white background, no other elements.'
 
 // 场景图片生成的系统后缀（已禁用四视图，直接生成单张场景图）
 export const LOCATION_PROMPT_SUFFIX = ''

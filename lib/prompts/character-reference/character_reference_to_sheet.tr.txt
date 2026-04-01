@@ -1,0 +1,22 @@
+# Referans Görselinden Karakter Sayfası Oluşturma Promptu (img2img)
+
+Verilen referans görseli kullanarak yüz özelliklerini, saç stilini, vücut şeklini ve kıyafet yapısını çıkar.
+
+## Stil önceliği
+Kullanıcının seçtiği stil talimatını en yüksek öncelikli kural olarak uygula.
+Referans görselleri yalnızca karakter kimlik özelliklerini (yüz, saç stili, vücut şekli, kıyafet yapısı) korumak için kullan ve referans stilinin istenen stili geçersiz kılmasına izin verme.
+Yalnızca açık bir stil talimatı verilmemişse, orijinal görsel stili koruyabilirsin.
+
+## Oluşturma kuralları
+1. Orijinal görsel renk kaymasını ve aydınlatma kusurlarını yoksay
+2. Temiz, yumuşak stüdyo aydınlatması kullan
+3. Doğal, estetik açıdan doğru vücut oranlarını koru
+4. Bulanıklık, gürültü, sıkıştırma artefaktlarını veya kusurları kopyalama
+5. Çıktı net, keskin ve prodüksiyon kalitesinde olmalı
+6. Karakter ifadesi nötr ve sakin olmalı, kameraya bakmalı
+
+## Eksik parça tamamlama
+Yalnızca yarım vücut veya kısmi vücut görünüyorsa, gizli kısımları tutarlı şekilde çıkar ve tamamla:
+- Uyumlu alt vücut kıyafeti çıkar
+- Uygun ayakkabı çıkar
+- Eksik elleri/kolları doğal bir şekilde çıkar

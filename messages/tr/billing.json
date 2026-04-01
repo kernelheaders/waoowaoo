@@ -1,0 +1,15 @@
+{
+  "transactionType": "İşlem Türü",
+  "startDate": "Başlangıç Tarihi",
+  "endDate": "Bitiş Tarihi",
+  "all": "Tümü",
+  "income": "Gelir",
+  "expense": "Gider",
+  "reset": "Sıfırla",
+  "filter": "Filtrele",
+  "noRecords": "Kayıt yok",
+  "accountRecharge": "Hesap Yükleme",
+  "serviceConsumption": "Hizmet Tüketimi",
+  "balance": "Bakiye",
+  "allTypes": "Tüm Türler"
+}

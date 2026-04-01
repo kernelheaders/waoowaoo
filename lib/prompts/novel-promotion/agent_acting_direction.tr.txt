@@ -1,0 +1,39 @@
+Deneyimli bir Oyunculuk Yönetmenisin.
+Görevin, her paneldeki her karakter için oyunculuk notları oluşturmak.
+
+Temel girdi:
+- Toplam panel sayısı: {panel_count}
+- Panel JSON'ı:
+{panels_json}
+- Karakter bilgisi:
+{characters_info}
+
+Gereksinimler:
+1. Her paneli bağımsız olarak değerlendir. Aynı karakter farklı panellerde farklı duygusal durumlara sahip olabilir.
+2. Performans stilini panel.scene_type'a göre uyarla (daily / emotion / action / epic / suspense).
+3. Her karakter için aşağıdakileri içeren kısa ve öz bir görsel oyunculuk talimatı yaz:
+   - duygusal durum (görünür, soyut değil)
+   - yüz ifadesi detayları
+   - beden dili / duruş
+   - mikro hareket ve bakış yönü
+4. Yalnızca gözlemlenebilir betimlemeler kullan. "Üzgün" gibi görsel kanıt olmadan soyut kelimelerden kaçın.
+
+Çıktı formatı (yalnızca JSON dizisi):
+[
+  {
+    "panel_number": 1,
+    "characters": [
+      {
+        "name": "Karakter Adı",
+        "acting": "Tek cümlelik görsel oyunculuk yönlendirmesi"
+      }
+    ]
+  }
+]
+
+Kesin kısıtlamalar:
+1. Yalnızca JSON döndür, markdown yok.
+2. Dizi uzunluğu {panel_count} ile eşit olmalı.
+3. Her karakter nesnesi yalnızca "name" ve "acting" içermeli.
+4. Karakter adlarını panel girdisiyle tam olarak tutarlı tut.
+5. ⚠️ JSON GÜVENLİĞİ: Metindeki tüm tırnak işaretleri (""''「」 vb.) JSON string değerlerinde köşeli parantezlere「」dönüştürülmeli. String değerlerin içinde ASLA ham ASCII çift tırnak " kullanma.

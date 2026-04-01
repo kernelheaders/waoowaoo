@@ -1,0 +1,70 @@
+{
+    "title": "Senaryo Görünümü",
+    "scriptBreakdown": "Senaryo Dökümü",
+    "splitCount": "{count} klip ayrıldı",
+    "noClips": "Henüz klip yok, lütfen hikaye görünümünden oluşturun",
+    "segment": {
+        "title": "Klip {index}",
+        "selected": "(Seçili)"
+    },
+    "inSceneAssets": "Sahne İçi Varlıklar",
+    "currentSelected": "Seçili: Klip {number}",
+    "assetView": {
+        "allClips": "Tüm Klipler",
+        "viewingClip": "Klip {number} Görüntüleniyor"
+    },
+    "asset": {
+        "generateCharacter": "Karakter oluşturmak için tıklayın →",
+        "generateLocation": "Mekan oluşturmak için tıklayın →",
+        "removeCharacterConfirm": "Bu karakteri mevcut klipten kaldırmak istediğinizden emin misiniz?",
+        "removeLocationConfirm": "Bu mekanı mevcut klipten kaldırmak istediğinizden emin misiniz?",
+        "removeFromClip": "Mevcut klipten kaldır",
+        "noAudio": "Ses yok",
+        "playing": "Oynatılıyor",
+        "listen": "Dinle",
+        "activeCharacters": "Aktif Karakterler",
+        "activeLocations": "Aktif Mekanlar",
+        "selectCharacter": "Eklenecek karakter/görünüm seçin",
+        "selectLocation": "Eklenecek mekan seçin",
+        "loadingAssets": "Varlıklar yükleniyor...",
+        "appearanceCount": "{count} görünüm",
+        "added": "Eklendi",
+        "primary": "Birincil",
+        "subAppearance": "Alt görünüm",
+        "defaultAppearance": "Varsayılan görünüm",
+        "clickToRemove": "{name} kaldırmak için tıklayın",
+        "clickToAdd": "{name} eklemek için tıklayın"
+    },
+    "screenplay": {
+        "scene": "Sahne {number}",
+        "location": "Mekan:",
+        "locationTime": "Zaman:",
+        "day": "Gündüz",
+        "night": "Gece",
+        "dawn": "Şafak",
+        "dusk": "Alacakaranlık",
+        "dialogue": "Diyalog",
+        "action": "Aksiyon",
+        "narration": "Anlatım",
+        "content": "Orijinal İçerik",
+        "noContent": "Henüz içerik yok",
+        "clickToEdit": "Düzenlemek için tıklayın",
+        "interior": "İÇ",
+        "exterior": "DIŞ",
+        "characters": "Karakterler",
+        "noCharacter": "Karakter bilgisi yok",
+        "noLocation": "Aktif mekan yok",
+        "noCharacterInClip": "Aktif karakter yok"
+    },
+    "confirm": {
+        "removeCharacter": "Bu karakteri mevcut klipten kaldırmak istediğinizden emin misiniz?",
+        "removeLocation": "Bu mekanı mevcut klipten kaldırmak istediğinizden emin misiniz?"
+    },
+    "generate": {
+        "missingAssets": "{count} varlığın görseli eksik",
+        "missingAssetsTip": "Lütfen tüm karakter ve mekanların görsellerini",
+        "missingAssetsTipLink": "önce oluşturun",
+        "generating": "Oluşturuluyor...",
+        "startGenerate": "Onayla ve Çizime Başla →"
+    }
+}

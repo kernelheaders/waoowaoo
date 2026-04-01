@@ -1,12 +1,12 @@
-const LOCALE_PATH_PATTERN = /^\/(zh|en)(\/|$)/
+const LOCALE_PATH_PATTERN = /^\/(tr|en)(\/|$)/
 
 function resolveLocaleFromPath(pathname: string): string {
   const match = pathname.match(LOCALE_PATH_PATTERN)
-  return match?.[1] ?? 'zh'
+  return match?.[1] ?? 'tr'
 }
 
 export function getPageLocale(): string {
-  if (typeof window === 'undefined') return 'zh'
+  if (typeof window === 'undefined') return 'tr'
   return resolveLocaleFromPath(window.location.pathname)
 }
 

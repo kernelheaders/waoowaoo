@@ -17,9 +17,9 @@ function trimText(value: string | null | undefined): string {
 function buildImageContext(type: SyncedAssetType, hasReferenceImages: boolean): string {
   if (!hasReferenceImages) return ''
   if (type === 'character') {
-    return '【参考图片】\n请仔细分析参考图片中的服装款式、颜色、材质、配饰等关键视觉特征，并将这些特征融入更新后的描述中。'
+    return '[Reference Images]\nPlease carefully analyze the key visual features in the reference images such as clothing style, color, material, accessories, and incorporate these features into the updated description.'
   }
-  return '【参考图片】\n请仔细分析参考图片中的建筑风格、装饰元素、光线氛围、色调等关键视觉特征，并将这些特征融入更新后的描述中。'
+  return '[Reference Images]\nPlease carefully analyze the key visual features in the reference images such as architectural style, decorative elements, lighting atmosphere, color tone, and incorporate these features into the updated description.'
 }
 
 function parseModifiedDescription(responseText: string): string {
@@ -59,7 +59,7 @@ export async function generateModifiedAssetDescription(params: {
       promptId: PROMPT_IDS.NP_LOCATION_DESCRIPTION_UPDATE,
       locale: params.locale,
       variables: {
-        location_name: trimText(params.locationName) || '场景',
+        location_name: trimText(params.locationName) || 'Scene',
         original_description: removeLocationPromptSuffix(params.currentDescription),
         modify_instruction: params.modifyInstruction,
         image_context: buildImageContext('location', hasReferenceImages),
@@ -91,7 +91,7 @@ export async function generateModifiedAssetDescription(params: {
       stepId: params.type === 'character'
         ? 'sync_character_description_after_image_modify'
         : 'sync_location_description_after_image_modify',
-      stepTitle: params.type === 'character' ? '同步角色描述' : '同步场景描述',
+      stepTitle: params.type === 'character' ? 'Sync character description' : 'Sync scene description',
       stepIndex: 1,
       stepTotal: 1,
     },

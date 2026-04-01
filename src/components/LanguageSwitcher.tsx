@@ -8,18 +8,18 @@ import { AppIcon } from '@/components/ui/icons'
 import { usePathname, useRouter } from '@/i18n/navigation'
 
 const LANGUAGE_LABELS: Record<Locale, string> = {
-    zh: '简体中文',
+    tr: 'Türkçe',
     en: 'English',
 }
 
 const SWITCH_CONFIRM_COPY: Record<Locale, { title: string; message: string; action: string; cancel: string; triggerLabel: string }> = {
-    zh: {
-        title: '切换语言？',
+    tr: {
+        title: 'Dil değiştirilsin mi?',
         message:
-            '切换到 {targetLanguage} 后，不仅界面文字会改变，整条流程的提示词模板、剧本生成和任务输出语言也会同步切换。是否继续？',
-        action: '确认切换',
-        cancel: '取消',
-        triggerLabel: '切换语言',
+            '{targetLanguage} diline geçiş yapıldığında, yalnızca arayüz metinleri değil, tüm süreçteki prompt şablonları, senaryo üretimi ve görev çıktı dili de değişecektir. Devam edilsin mi?',
+        action: 'Değiştir',
+        cancel: 'İptal',
+        triggerLabel: 'Dil değiştir',
     },
     en: {
         title: 'Switch language?',
@@ -32,7 +32,7 @@ const SWITCH_CONFIRM_COPY: Record<Locale, { title: string; message: string; acti
 }
 
 function isSupportedLocale(locale?: string): locale is Locale {
-    return locale === 'zh' || locale === 'en'
+    return locale === 'tr' || locale === 'en'
 }
 
 export default function LanguageSwitcher() {
@@ -45,10 +45,10 @@ export default function LanguageSwitcher() {
     const [pendingLocale, setPendingLocale] = useState<Locale | null>(null)
 
     if (!isSupportedLocale(locale)) {
-        throw new Error('LanguageSwitcher requires locale to be zh or en')
+        throw new Error('LanguageSwitcher requires locale to be tr or en')
     }
     const currentLocale: Locale = locale
-    const targetLocale: Locale = currentLocale === 'zh' ? 'en' : 'zh'
+    const targetLocale: Locale = currentLocale === 'tr' ? 'en' : 'tr'
     const activeLocaleForCopy: Locale = pendingLocale ?? targetLocale
     const confirmCopy = SWITCH_CONFIRM_COPY[activeLocaleForCopy]
 

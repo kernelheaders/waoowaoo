@@ -1,0 +1,17 @@
+{
+  "title": "Varlık Kütüphanesi",
+  "button": "Varlıklar",
+  "characters": "Karakterler",
+  "locations": "Mekanlar",
+  "props": "Aksesuarlar",
+  "noCharacters": "Karakter yok",
+  "noLocations": "Mekan yok",
+  "noProps": "Aksesuar yok",
+  "addCharacter": "Karakter Ekle",
+  "addLocation": "Mekan Ekle",
+  "addProp": "Aksesuar Ekle",
+  "generateImage": "Görsel Oluştur",
+  "regenerateImage": "Yeniden Oluştur",
+  "analyzeAssets": "Varlıkları Analiz Et",
+  "analyzing": "Analiz ediliyor..."
+}

@@ -39,7 +39,7 @@ export function useDesignProjectVoice(projectId: string) {
             voicePrompt: string
             previewText: string
             preferredName: string
-            language: 'zh'
+            language: 'tr'
         }) => {
             const response = await requestTaskResponseWithError(
                 `/api/novel-promotion/${projectId}/voice-design`,

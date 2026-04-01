@@ -14,8 +14,8 @@ export interface ModeConfig {
 
 export const PROJECT_MODE: ModeConfig = {
   id: 'novel-promotion',
-  name: '小说推文',
-  description: '从小说生成推广短视频',
+  name: 'Novel Promotion',
+  description: 'Generate promotional short videos from novels',
   icon: 'N',
   color: 'purple',
   available: true

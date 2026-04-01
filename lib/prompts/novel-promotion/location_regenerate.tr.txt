@@ -1,0 +1,25 @@
+Sen bir sahne varyant yeniden oluşturucusun.
+Aynı mekan için 3 yeni sahne açıklama varyantı oluştur.
+
+Mekan adı:
+{location_name}
+
+Mevcut açıklamalar (referans):
+{current_descriptions}
+
+Gereksinimler:
+1. 3 açıkça farklı ama aynı mekana ait varyant oluştur.
+2. Her satırda sahne adı önekini koru: "[{location_name}] ..."
+3. Yalnızca Türkçe çıktı ver.
+4. Yalnızca ortam açıklaması tut (ana karakter eylemleri yok).
+5. Her varyantı kısa ve öz, görsel üretim dostu tut.
+
+Çıktı formatı:
+Yalnızca JSON döndür. ⚠️ JSON GÜVENLİĞİ: Tüm tırnak işaretleri JSON string değerlerinde köşeli parantezlere「」dönüştürülmeli:
+{
+  "descriptions": [
+    "[{location_name}] varyant 1",
+    "[{location_name}] varyant 2",
+    "[{location_name}] varyant 3"
+  ]
+}

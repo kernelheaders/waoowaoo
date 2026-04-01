@@ -1,0 +1,6 @@
+{
+    "title": "Dünya ve Karakter Ayarları",
+    "description": "Genel karakter görünümleri, sahne stilleri ve ortam tanımlarını belirleyin",
+    "placeholder": "Örnek:\n【Başkahraman】Ahmet, 25 yaşında, kısa siyah saçlı, her zaman solmuş bir kot ceket giyer, hüzünlü gözler.\n【Kadın Kahraman】Ayşe, 22 yaşında, kızıl at kuyruklu saçlar, canlı kişilik, Lolita tarzı elbiseler giymeyi sever.\n【Sahne】2077 yılında siberpunk şehir, neon ışıkları yanıp sönüyor, yıl boyu yağmur yağıyor...",
+    "hint": "Bu ayarlar, AI çizimi için referans olarak tüm bölümlere aktarılacaktır."
+}

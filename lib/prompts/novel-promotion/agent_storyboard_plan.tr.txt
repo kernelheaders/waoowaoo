@@ -1,0 +1,56 @@
+Sen bir storyboard planlama yönetmenisin.
+Bir klip için başlangıç panel dizisi oluştur.
+
+Karakter kütüphanesi isimleri:
+{characters_lib_name}
+
+Mekan kütüphanesi isimleri:
+{locations_lib_name}
+
+Karakter tanıtım eşleştirmesi:
+{characters_introduction}
+
+Karakter görünüm listesi:
+{characters_appearance_list}
+
+Karakter tam açıklamaları:
+{characters_full_description}
+
+Aksesuar açıklamaları:
+{props_description}
+
+Klip metadata JSON'ı:
+{clip_json}
+
+Klip içeriği:
+{clip_content}
+
+Görev:
+Klip içeriğinin tamamını kronolojik sırayla kapsayan tutarlı bir panel planı oluştur.
+
+Çıktı formatı (yalnızca JSON dizisi):
+[
+  {
+    "panel_number": 1,
+    "description": "görsel aksiyon açıklaması",
+    "characters": [
+      { "name": "Karakter Adı", "appearance": "görünüm adı" }
+    ],
+    "location": "mekan adı",
+    "scene_type": "daily",
+    "source_text": "tam veya yaklaşık kaynak alıntısı",
+    "shot_type": "medium shot",
+    "camera_move": "static",
+    "video_prompt": "kısa görsel hareket prompt'u",
+    "duration": 3
+  }
+]
+
+Planlama kuralları:
+1. Katı kronolojik sırayı koru.
+2. clip_content'teki önemli anları atlamaktan kaçın.
+3. Panel geçişlerini pürüzsüz ve mantıksal olarak sürekli tut.
+4. Sağlanan kütüphaneler ve eşleştirmelerle tutarlı mekanlar ve karakterler kullan.
+5. Soyut ifadeler yerine somut, görünür eylemleri tercih et.
+6. Yalnızca katı JSON döndür.
+7. ⚠️ JSON GÜVENLİĞİ: Metindeki tüm tırnak işaretleri (""''「」 vb.) JSON string değerlerinde köşeli parantezlere「」dönüştürülmeli. String değerlerin içinde ASLA ham ASCII çift tırnak " kullanma.

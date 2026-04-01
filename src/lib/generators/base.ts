@@ -119,7 +119,7 @@ export abstract class BaseImageGenerator implements ImageGenerator {
 
         return {
             success: false,
-            error: lastError instanceof Error ? lastError.message : '生成失败'
+            error: lastError instanceof Error ? lastError.message : 'Generation failed'
         }
     }
 
@@ -148,7 +148,7 @@ export abstract class BaseVideoGenerator implements VideoGenerator {
 
         return {
             success: false,
-            error: lastError instanceof Error ? lastError.message : '视频生成失败'
+            error: lastError instanceof Error ? lastError.message : 'Video generation failed'
         }
     }
 
@@ -162,7 +162,7 @@ export abstract class BaseAudioGenerator implements AudioGenerator {
         } catch (error: unknown) {
             return {
                 success: false,
-                error: error instanceof Error ? error.message : '语音生成失败'
+                error: error instanceof Error ? error.message : 'Voice generation failed'
             }
         }
     }

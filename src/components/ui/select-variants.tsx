@@ -33,7 +33,7 @@ export function SelectVariantCard({
     options,
     value,
     onChange,
-    placeholder = '请选择...',
+    placeholder = 'Select...',
     disabled = false,
     className = '',
 }: CustomSelectProps) {
@@ -185,7 +185,7 @@ export function SelectVariantMinimal({
     options,
     value,
     onChange,
-    placeholder = '请选择...',
+    placeholder = 'Select...',
     disabled = false,
     className = '',
 }: CustomSelectProps) {
@@ -323,7 +323,7 @@ export function SelectVariantGhost({
     options,
     value,
     onChange,
-    placeholder = '请选择...',
+    placeholder = 'Select...',
     disabled = false,
     className = '',
 }: CustomSelectProps) {
